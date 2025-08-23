@@ -12,6 +12,7 @@ import {
   SheetTrigger,
   SheetClose
 } from "@/components/ui/sheet";
+import { ThemeToggle } from "./theme-toggle";
 
 const navLinks = [
   { href: "#projects", label: "Projects" },
@@ -38,6 +39,10 @@ export function Header() {
               </Link>
             ))}
           </nav>
+        </div>
+
+        <div className="absolute right-4 md:right-6">
+          <ThemeToggle />
         </div>
 
         <div className="md:hidden flex-1 flex justify-end">

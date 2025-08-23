@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetContent,
+  SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
 
@@ -35,6 +37,9 @@ export function Header() {
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="right">
+                    <SheetHeader>
+                        <SheetTitle>Navigation</SheetTitle>
+                    </SheetHeader>
                     <div className="grid gap-4 p-4">
                         <nav className="grid gap-2">
                          {navLinks.map(({ href, label }) => (

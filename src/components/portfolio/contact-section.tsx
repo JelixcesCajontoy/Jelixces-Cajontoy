@@ -16,6 +16,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const initialState = {
   message: "",
   errors: null,
+  success: false,
 };
 
 function SubmitButton() {
@@ -35,20 +36,21 @@ export function ContactSection() {
 
   useEffect(() => {
     if (state.message) {
-      if (state.errors) {
-        const firstErrorKey = Object.keys(state.errors)[0] as keyof typeof state.errors;
-        const errorMessage = state.errors[firstErrorKey]?.[0] || 'Please check your input.';
-        toast({
-          variant: "destructive",
-          title: "Message Failed",
-          description: errorMessage,
-        });
-      } else {
+      if (state.success) {
         toast({
           title: "Message Sent!",
           description: state.message,
         });
         formRef.current?.reset();
+      } else if (state.errors) {
+        // You can choose to show a general error toast or rely on field-specific errors.
+        // For now, we'll let the field errors provide the feedback.
+        // Example:
+        toast({
+           variant: "destructive",
+           title: "Validation Error",
+           description: "Please check the form for errors.",
+        });
       }
     }
   }, [state, toast]);
@@ -69,12 +71,12 @@ export function ContactSection() {
             </a>
           </Button>
           <Button variant="outline" size="icon" asChild>
-            <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
               <Linkedin className="h-5 w-5" />
             </a>
           </Button>
           <Button variant="outline" size="icon" asChild>
-            <a href="#" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
               <Github className="h-5 w-5" />
             </a>
           </Button>

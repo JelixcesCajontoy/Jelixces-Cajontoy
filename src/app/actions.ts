@@ -17,17 +17,22 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     
     if (!validatedFields.success) {
         return {
-            message: "Failed to send message.",
+            message: "Failed to send message. Please check your input.",
             errors: validatedFields.error.flatten().fieldErrors,
+            success: false,
         }
     }
 
     // Here you would typically send an email, save to a database, etc.
-    // For this example, we'll just log it to the console.
+    // For this example, we'll just log it to the console to simulate a successful submission.
     console.log("New contact form submission:", validatedFields.data);
 
+    // In a real-world application, you would handle potential errors from your backend service here.
+    // For now, we will assume it's always successful.
+
     return {
-        message: "Your message has been sent successfully!",
+        message: `Thank you, ${validatedFields.data.name}! Your message has been sent successfully.`,
         errors: null,
+        success: true,
     }
 }

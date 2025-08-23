@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Github, Linkedin, Mail, Send } from "lucide-react";
+import { Facebook, Instagram, Send } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const initialState = {
@@ -28,6 +28,22 @@ function SubmitButton() {
     </Button>
   );
 }
+
+const ThreadsIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M11.5 12.5c0-4.07.61-4.11 3.5-4.5 2.89-.39 3.5.43 3.5 4.5 0 4.07-.61 4.11-3.5 4.5-2.89.39-3.5-.43-3.5-4.5Z"></path>
+      <path d="M9 17.5c-2.89.39-3.5-.43-3.5-4.5 0-4.07.61-4.11 3.5-4.5 2.89-.39 3.5.43 3.5 4.5"></path>
+    </svg>
+  );
 
 export function ContactSection() {
   const [state, formAction] = useActionState(submitContactForm, initialState);
@@ -58,18 +74,18 @@ export function ContactSection() {
         </div>
         <div className="flex space-x-2 pt-2 sm:space-x-4">
           <Button variant="outline" size="icon" asChild>
-            <a href="mailto:hello@example.com" aria-label="Email">
-              <Mail className="h-5 w-5" />
+            <a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <Facebook className="h-5 w-5" />
             </a>
           </Button>
           <Button variant="outline" size="icon" asChild>
-            <a href="https://www.linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="h-5 w-5" />
+            <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <Instagram className="h-5 w-5" />
             </a>
           </Button>
           <Button variant="outline" size="icon" asChild>
-            <a href="https://github.com" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-              <Github className="h-5 w-5" />
+            <a href="https://www.threads.net" aria-label="Threads" target="_blank" rel="noopener noreferrer">
+              <ThreadsIcon className="h-5 w-5" />
             </a>
           </Button>
         </div>

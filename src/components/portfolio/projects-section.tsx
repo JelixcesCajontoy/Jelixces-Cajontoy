@@ -6,7 +6,7 @@ import { ExternalLink } from 'lucide-react';
 
 const projects = [
   {
-    title: 'CvSU Accreditation Online Web',
+    title: 'CvSU - Bacoor',
     description: 'An online platform for CvSU to manage and streamline the accreditation process, built with Flutter for the cross-platform frontend and Firebase for backend services.',
     image: 'https://placehold.co/600x400.png',
     imageHint: 'accreditation webapp',

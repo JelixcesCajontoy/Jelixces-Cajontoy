@@ -3,12 +3,13 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink } from 'lucide-react';
+import cvsuImage from '@/image/cvsuaccre.png';
 
 const projects = [
   {
-    title: 'CvSU - Bacoor Accreditation Online',
+    title: 'CvSU - Bacoor Online Accreditation',
     description: 'An online platform for CvSU to manage and streamline the accreditation process, built with Flutter for the cross-platform frontend and Firebase for backend services.',
-    image: 'https://storage.googleapis.com/aif-stg-build-service-input/MjAxYzM2NzAtNWVlNC00YWE0LTkyNDQtNzM4N2I4YmNjOTAw.png',
+    image: cvsuImage,
     imageHint: 'accreditation webapp',
     tags: ['Dart', 'Flutter', 'Firebase'],
     liveUrl: 'https://cvsubacooraccre.web.app/',

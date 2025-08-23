@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Github, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 const projects = [
   {
@@ -12,7 +12,6 @@ const projects = [
     imageHint: 'e-commerce website',
     tags: ['Next.js', 'React', 'Tailwind CSS', 'Stripe'],
     liveUrl: '#',
-    githubUrl: '#',
   },
   {
     title: 'Project Management Tool',
@@ -21,7 +20,6 @@ const projects = [
     imageHint: 'dashboard software',
     tags: ['React', 'Node.js', 'Express', 'MongoDB'],
     liveUrl: '#',
-    githubUrl: '#',
   },
   {
     title: 'Personal Blog Engine',
@@ -30,7 +28,6 @@ const projects = [
     imageHint: 'blog article',
     tags: ['Astro', 'Markdown', 'TypeScript'],
     liveUrl: '#',
-    githubUrl: '#',
   },
 ];
 
@@ -70,12 +67,6 @@ export function ProjectsSection() {
               </CardContent>
               <CardFooter className="p-6 pt-0">
                 <div className="flex w-full justify-start gap-4">
-                  <Button asChild variant="outline">
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2" />
-                      GitHub
-                    </a>
-                  </Button>
                   <Button asChild>
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2" />

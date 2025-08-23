@@ -31,9 +31,9 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
+    <section id="testimonials" className="w-full py-16 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-primary">What Others Say</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -46,23 +46,23 @@ export function TestimonialsSection() {
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto mt-12"
+          className="w-full max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto"
         >
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className="md:basis-1/2">
                 <div className="p-1 h-full">
-                  <Card className="h-full">
+                  <Card className="h-full bg-secondary/50 border-secondary-foreground/10">
                     <CardContent className="flex flex-col items-center justify-center p-6 sm:p-8 text-center space-y-4 h-full">
                       <Image
                         src={testimonial.image}
                         alt={testimonial.name}
                         width={80}
                         height={80}
-                        className="rounded-full"
+                        className="rounded-full border-2 border-primary"
                         data-ai-hint={testimonial.imageHint}
                       />
-                      <blockquote className="text-base sm:text-lg font-medium leading-relaxed text-muted-foreground">"{testimonial.quote}"</blockquote>
+                      <blockquote className="text-base sm:text-lg font-medium leading-relaxed text-foreground/80">"{testimonial.quote}"</blockquote>
                       <div className="font-semibold">
                         <p className="text-foreground">{testimonial.name}</p>
                         <p className="text-sm text-muted-foreground">{testimonial.title}</p>

@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/portfolio/hero-section";
 import { ProjectsSection } from "@/components/portfolio/projects-section";
 import { SkillsSection } from "@/components/portfolio/skills-section";
 import { TestimonialsSection } from "@/components/portfolio/testimonials-section";
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (
@@ -11,8 +12,11 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
+        <Separator />
         <ProjectsSection />
+        <Separator />
         <SkillsSection />
+        <Separator />
         <TestimonialsSection />
       </main>
       <Footer />

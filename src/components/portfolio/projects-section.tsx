@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Github, ExternalLink } from 'lucide-react';
@@ -36,9 +36,9 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-secondary">
+    <section id="projects" className="w-full py-16 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">Featured Projects</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -46,9 +46,9 @@ export function ProjectsSection() {
             </p>
           </div>
         </div>
-        <div className="grid gap-8 mt-12 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <Card key={project.title} className="flex flex-col overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+            <Card key={project.title} className="flex flex-col overflow-hidden bg-secondary border-secondary-foreground/10 transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl">
               <CardHeader className="p-0">
                 <Image
                   src={project.image}
@@ -60,13 +60,13 @@ export function ProjectsSection() {
                 />
               </CardHeader>
               <CardContent className="p-6 flex-grow">
-                <CardTitle className="font-headline mb-2">{project.title}</CardTitle>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <CardTitle className="font-headline mb-2 text-xl">{project.title}</CardTitle>
+                <CardDescription className="text-muted-foreground mb-4">{project.description}</CardDescription>
+                <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary">{tag}</Badge>
+                    <Badge key={tag} variant="outline" className="border-primary/50 text-primary">{tag}</Badge>
                   ))}
                 </div>
-                <p className="text-muted-foreground">{project.description}</p>
               </CardContent>
               <CardFooter className="p-6 pt-0">
                 <div className="flex w-full justify-start gap-4">

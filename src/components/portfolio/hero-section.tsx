@@ -14,7 +14,7 @@ export function HeroSection() {
         <div className="flex flex-col items-center text-center space-y-8 animate-fade-in-up">
           <Image
               src="https://placehold.co/144x144.png"
-              alt="John Doe Headshot"
+              alt="Jelixces Cajontoy Headshot"
               width={144}
               height={144}
               className="rounded-full object-cover shadow-lg border-4 border-primary"
@@ -22,7 +22,7 @@ export function HeroSection() {
           />
           <div className="space-y-3">
               <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-foreground">
-              John Doe
+              Jelixces Cajontoy
               </h1>
               <h2 className="text-xl font-medium text-primary md:text-2xl">
               Front-end Developer

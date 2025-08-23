@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
@@ -10,7 +11,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { href: "#projects", label: "Projects" },
@@ -25,7 +25,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
-        <div className="hidden md:flex flex-1 justify-center">
+        <div className="flex-1 justify-center hidden md:flex">
           <nav className="flex items-center space-x-6 text-sm font-medium">
             {navLinks.map(({ href, label }) => (
               <Link
@@ -38,7 +38,6 @@ export function Header() {
             ))}
           </nav>
         </div>
-
         <div className="md:hidden flex-1 flex justify-end">
           <Sheet open={isSheetOpen} onOpenChange={setSheetOpen}>
             <SheetTrigger asChild>

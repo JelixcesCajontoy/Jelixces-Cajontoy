@@ -8,7 +8,7 @@ const projects = [
   {
     title: 'CvSU - Bacoor Accreditation Online',
     description: 'An online platform for CvSU to manage and streamline the accreditation process, built with Flutter for the cross-platform frontend and Firebase for backend services.',
-    image: 'https://placehold.co/600x400.png',
+    image: 'https://storage.googleapis.com/aif-stg-build-service-input/MjAxYzM2NzAtNWVlNC00YWE0LTkyNDQtNzM4N2I4YmNjOTAw.png',
     imageHint: 'accreditation webapp',
     tags: ['Dart', 'Flutter', 'Firebase'],
     liveUrl: 'https://cvsubacooraccre.web.app/',

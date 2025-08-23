@@ -4,7 +4,7 @@ import { Code, Database, Server, Brush, Rocket, ShieldCheck } from 'lucide-react
 import type { ElementType } from 'react';
 
 const skills: Record<string, string[]> = {
-  'Languages': ['JavaScript', 'TypeScript', 'Java', 'Python', 'Dart'],
+  'Languages': ['JavaScript', 'TypeScript', 'Java', 'Python', 'Dart', 'C#'],
   'Frontend': ['React', 'Next.js', 'Vue.js', 'Tailwind CSS', 'Redux'],
   'DevOps & Tools': ['Git', 'GitHub', 'Vercel', 'Firebase', 'VS Code', 'Android Studio'],
 };

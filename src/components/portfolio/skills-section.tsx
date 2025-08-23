@@ -1,9 +1,10 @@
+
 import { Badge } from '@/components/ui/badge';
 import { Code, Database, Server, Brush, Rocket, ShieldCheck } from 'lucide-react';
 import type { ElementType } from 'react';
 
 const skills: Record<string, string[]> = {
-  'Languages': ['JavaScript', 'TypeScript', 'Python', 'HTML5', 'CSS3'],
+  'Languages': ['JavaScript', 'TypeScript', 'Java', 'Python', 'Dart'],
   'Frontend': ['React', 'Next.js', 'Vue.js', 'Tailwind CSS', 'Redux'],
   'DevOps & Tools': ['Docker', 'Git', 'GitHub', 'Vercel', 'AWS'],
 };
@@ -11,7 +12,6 @@ const skills: Record<string, string[]> = {
 const icons: Record<string, ElementType> = {
   'Languages': Code,
   'Frontend': Brush,
-  'Backend': Server,
   'DevOps & Tools': Rocket,
 };
 

@@ -2,7 +2,6 @@
 'use server';
 
 import { z } from 'zod';
-import { Resend } from 'resend';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -25,50 +24,15 @@ export async function submitContactForm(prevState: any, formData: FormData) {
         }
     }
 
-    const resendApiKey = process.env.RESEND_API_KEY;
-    const toEmail = process.env.RESEND_TO_EMAIL;
+    // This is a demo form. In a real application, you would send the data to your email address.
+    console.log("New contact form submission:");
+    console.log("Name:", validatedFields.data.name);
+    console.log("Email:", validatedFields.data.email);
+    console.log("Message:", validatedFields.data.message);
 
-    if (!resendApiKey || !toEmail) {
-      console.error("RESEND_API_KEY or RESEND_TO_EMAIL is not configured.");
-      return {
-        message: "Server configuration error. Could not send email.",
+    return {
+        message: `Thank you, ${validatedFields.data.name}! Your message has been received.`,
         errors: null,
-        success: false,
-      }
-    }
-
-    const resend = new Resend(resendApiKey);
-
-    try {
-      const { data, error } = await resend.emails.send({
-        from: 'My Portfolio <onboarding@resend.dev>',
-        to: [toEmail],
-        subject: `New message from ${validatedFields.data.name}`,
-        reply_to: validatedFields.data.email,
-        text: `Name: ${validatedFields.data.name}\nEmail: ${validatedFields.data.email}\n\nMessage:\n${validatedFields.data.message}`,
-      });
-
-      if (error) {
-        console.error("Resend error:", error);
-        return {
-          message: `Sorry, there was an error sending your message. Please try again later.`,
-          errors: null,
-          success: false,
-        };
-      }
-
-      return {
-          message: `Thank you, ${validatedFields.data.name}! Your message has been sent successfully.`,
-          errors: null,
-          success: true,
-      }
-
-    } catch (exception) {
-      console.error("Exception sending email:", exception);
-      return {
-        message: `An unexpected error occurred. Please try again later.`,
-        errors: null,
-        success: false,
-      };
+        success: true,
     }
 }

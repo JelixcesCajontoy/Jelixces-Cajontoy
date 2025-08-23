@@ -17,13 +17,13 @@ const navLinks = [
 export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 max-w-screen-2xl items-center justify-between">
-        <a href="/" className="flex items-center space-x-2">
+      <div className="container flex h-14 max-w-screen-2xl items-center">
+        <a href="/" className="flex items-center space-x-2 mr-6">
           <Briefcase className="h-6 w-6 text-primary" />
           <span className="font-bold sm:inline-block font-headline">PortfolioPro</span>
         </a>
         
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium mx-auto">
           {navLinks.map(({ href, label }) => (
             <a key={label} href={href} className="transition-colors hover:text-primary">
               {label}
@@ -31,7 +31,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="md:hidden">
+        <div className="md:hidden ml-auto">
             <Sheet>
                 <SheetTrigger asChild>
                     <Button variant="ghost" size="icon">

@@ -36,18 +36,13 @@ export function ContactSection() {
 
   useEffect(() => {
     if (state.message) {
-      if (state.success) {
         toast({
-          title: "Message Sent!",
+          title: state.success ? "Message Sent!" : "Error",
           description: state.message,
+          variant: state.success ? "default" : "destructive",
         });
+      if (state.success) {
         formRef.current?.reset();
-      } else if (state.errors) {
-        toast({
-           variant: "destructive",
-           title: "Validation Error",
-           description: "Please check the form for errors.",
-        });
       }
     }
   }, [state, toast]);
@@ -104,9 +99,6 @@ export function ContactSection() {
             </div>
             <div className="flex flex-col items-start gap-4">
                 <SubmitButton />
-                <p className="text-xs text-muted-foreground">
-                    Note: This form is for demonstration only and does not send emails.
-                </p>
             </div>
           </form>
         </CardContent>

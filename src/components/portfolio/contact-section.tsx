@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Github, Linkedin, Mail, Send } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const initialState = {
   message: "",
@@ -99,6 +99,7 @@ export function ContactSection() {
             </div>
             <div className="flex flex-col items-start gap-4">
                 <SubmitButton />
+                <p className="text-xs text-muted-foreground">Note: This is a demo form and does not send emails.</p>
             </div>
           </form>
         </CardContent>

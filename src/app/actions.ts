@@ -1,10 +1,8 @@
+
 'use server';
 
 import { z } from 'zod';
 import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
-const toEmail = process.env.RESEND_TO_EMAIL;
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -27,7 +25,10 @@ export async function submitContactForm(prevState: any, formData: FormData) {
         }
     }
 
-    if (!process.env.RESEND_API_KEY || !toEmail) {
+    const resendApiKey = process.env.RESEND_API_KEY;
+    const toEmail = process.env.RESEND_TO_EMAIL;
+
+    if (!resendApiKey || !toEmail) {
       console.error("RESEND_API_KEY or RESEND_TO_EMAIL is not configured.");
       return {
         message: "Server configuration error. Could not send email.",
@@ -36,9 +37,11 @@ export async function submitContactForm(prevState: any, formData: FormData) {
       }
     }
 
+    const resend = new Resend(resendApiKey);
+
     try {
       const { data, error } = await resend.emails.send({
-        from: 'Portfolio Contact Form <onboarding@resend.dev>',
+        from: 'My Portfolio <onboarding@resend.dev>',
         to: [toEmail],
         subject: `New message from ${validatedFields.data.name}`,
         reply_to: validatedFields.data.email,

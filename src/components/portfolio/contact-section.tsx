@@ -99,7 +99,6 @@ export function ContactSection() {
             </div>
             <div className="flex flex-col items-start gap-4">
                 <SubmitButton />
-                <p className="text-xs text-muted-foreground">Note: This is a demo form and does not send emails.</p>
             </div>
           </form>
         </CardContent>

@@ -2,6 +2,7 @@
 'use server';
 
 import { z } from 'zod';
+import nodemailer from 'nodemailer';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -24,15 +25,47 @@ export async function submitContactForm(prevState: any, formData: FormData) {
         }
     }
 
-    // This is a demo form. In a real application, you would send the data to your email address.
-    console.log("New contact form submission:");
-    console.log("Name:", validatedFields.data.name);
-    console.log("Email:", validatedFields.data.email);
-    console.log("Message:", validatedFields.data.message);
+    const { name, email, message } = validatedFields.data;
 
-    return {
-        message: `Thank you, ${validatedFields.data.name}! Your message has been received.`,
-        errors: null,
-        success: true,
+    const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: Number(process.env.SMTP_PORT),
+        secure: Number(process.env.SMTP_PORT) === 465, // true for 465, false for other ports
+        auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
+        },
+    });
+
+    try {
+        await transporter.sendMail({
+            from: process.env.SMTP_USER,
+            to: process.env.EMAIL_TO,
+            replyTo: email,
+            subject: `New message from ${name} via your portfolio`,
+            text: message,
+            html: `
+              <div>
+                <h2>New Contact Form Submission</h2>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Message:</strong></p>
+                <p>${message}</p>
+              </div>
+            `,
+        });
+
+        return {
+            message: `Thank you, ${name}! Your message has been sent successfully.`,
+            errors: null,
+            success: true,
+        }
+    } catch (error) {
+        console.error("Failed to send email:", error);
+        return {
+            message: "Sorry, there was an error sending your message. Please try again later.",
+            errors: null,
+            success: false,
+        }
     }
 }

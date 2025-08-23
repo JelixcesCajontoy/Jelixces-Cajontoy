@@ -74,17 +74,17 @@ export function ContactSection() {
         </div>
         <div className="flex space-x-2 pt-2 sm:space-x-4">
           <Button variant="outline" size="icon" asChild>
-            <a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/share/1B6Gyxni9A/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
               <Facebook className="h-5 w-5" />
             </a>
           </Button>
           <Button variant="outline" size="icon" asChild>
-            <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/jelixces__jc?igsh=bWFmbzUzeXpyazlz" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
               <Instagram className="h-5 w-5" />
             </a>
           </Button>
           <Button variant="outline" size="icon" asChild>
-            <a href="https://www.threads.net" aria-label="Threads" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.threads.com/@jelixces__jc" aria-label="Threads" target="_blank" rel="noopener noreferrer">
               <ThreadsIcon className="h-5 w-5" />
             </a>
           </Button>

@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Facebook, Instagram, Send } from "lucide-react";
+import { Facebook, Instagram, Send, AtSign } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const initialState = {
@@ -28,21 +28,6 @@ function SubmitButton() {
     </Button>
   );
 }
-
-const ThreadsIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        viewBox="0 0 24 24" 
-        fill="none" 
-        stroke="currentColor" 
-        strokeWidth="2" 
-        strokeLinecap="round" 
-        strokeLinejoin="round" 
-        {...props}
-    >
-        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3l-.5 3h-2.5v6.95C18.05 21.45 22 17.19 22 12Z"></path>
-    </svg>
-  );
 
 export function ContactSection() {
   const [state, formAction] = useActionState(submitContactForm, initialState);
@@ -84,7 +69,7 @@ export function ContactSection() {
           </Button>
           <Button variant="outline" size="icon" asChild>
             <a href="https://www.threads.com/@jelixces__jc" aria-label="Threads" target="_blank" rel="noopener noreferrer">
-              <ThreadsIcon className="h-5 w-5" />
+              <AtSign className="h-5 w-5" />
             </a>
           </Button>
         </div>

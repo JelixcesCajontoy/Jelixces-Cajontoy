@@ -43,9 +43,6 @@ export function ContactSection() {
         });
         formRef.current?.reset();
       } else if (state.errors) {
-        // You can choose to show a general error toast or rely on field-specific errors.
-        // For now, we'll let the field errors provide the feedback.
-        // Example:
         toast({
            variant: "destructive",
            title: "Validation Error",
@@ -105,7 +102,12 @@ export function ContactSection() {
                 <Textarea id="message" name="message" placeholder="Your message..." rows={5} required />
                 {state.errors?.message && <p className="text-sm font-medium text-destructive">{state.errors.message[0]}</p>}
             </div>
-            <SubmitButton />
+            <div className="flex flex-col items-start gap-4">
+                <SubmitButton />
+                <p className="text-xs text-muted-foreground">
+                    Note: This form is for demonstration only and does not send emails.
+                </p>
+            </div>
           </form>
         </CardContent>
       </Card>

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useActionState } from "react";
@@ -52,13 +51,13 @@ export function ContactSection() {
   }, [state, toast]);
 
   return (
-    <div className="grid gap-12 md:grid-cols-2">
+    <div className="grid gap-12 md:grid-cols-2 items-start">
       <div className="space-y-4">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-primary">Get in Touch</h2>
         <p className="text-muted-foreground max-w-md">
           Have a project in mind, a question, or just want to say hi? I'd love to hear from you. Fill out the form or connect with me through social media.
         </p>
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 pt-2">
           <Button variant="outline" size="icon" asChild>
             <a href="mailto:hello@example.com" aria-label="Email">
               <Mail className="h-5 w-5" />

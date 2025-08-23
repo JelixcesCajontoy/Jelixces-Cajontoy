@@ -11,7 +11,7 @@ const projects = [
     image: 'https://placehold.co/600x400.png',
     imageHint: 'accreditation webapp',
     tags: ['Dart', 'Flutter', 'Firebase'],
-    liveUrl: '#',
+    liveUrl: 'https://cvsubacooraccre.web.app/',
   },
   {
     title: 'Project Management Tool',

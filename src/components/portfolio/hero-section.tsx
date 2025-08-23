@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 
 export function HeroSection() {
-  const displayDescription = "A passionate and creative full-stack developer with a knack for building beautiful, functional, and user-centric web applications. With a strong foundation in both front-end and back-end technologies, I thrive on turning complex problems into elegant solutions.";
+  const displayDescription = "A passionate and creative front-end developer with a knack for building beautiful, functional, and user-centric web applications. With a strong foundation in front-end technologies, I thrive on turning complex problems into elegant user interfaces.";
 
   return (
     <section id="home" className="w-full py-24 md:py-32 lg:py-40">
@@ -25,7 +25,7 @@ export function HeroSection() {
               John Doe
               </h1>
               <h2 className="text-xl font-medium text-primary md:text-2xl">
-              Full-Stack Developer
+              Front-end Developer
               </h2>
           </div>
           <p className="max-w-3xl text-base text-muted-foreground leading-relaxed sm:text-lg">

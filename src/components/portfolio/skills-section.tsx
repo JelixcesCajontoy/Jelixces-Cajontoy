@@ -5,7 +5,6 @@ import type { ElementType } from 'react';
 const skills: Record<string, string[]> = {
   'Languages': ['JavaScript', 'TypeScript', 'Python', 'HTML5', 'CSS3'],
   'Frontend': ['React', 'Next.js', 'Vue.js', 'Tailwind CSS', 'Redux'],
-  'Backend': ['Node.js', 'Express', 'Python', 'Django', 'PostgreSQL'],
   'DevOps & Tools': ['Docker', 'Git', 'GitHub', 'Vercel', 'AWS'],
 };
 

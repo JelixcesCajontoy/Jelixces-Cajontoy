@@ -5,7 +5,7 @@ import type { ElementType } from 'react';
 
 const skills: Record<string, string[]> = {
   'Languages': ['JavaScript', 'TypeScript', 'Java', 'Python', 'Dart', 'C#'],
-  'Frontend': ['React', 'Next.js', 'Vue.js', 'Tailwind CSS', 'Redux'],
+  'Frontend': ['React.js', 'Vue.js', 'Flutter', 'Blazor', 'HTML5', 'CSS3 / SCSS', 'Tailwind CSS'],
   'DevOps & Tools': ['Git', 'GitHub', 'Vercel', 'Firebase', 'VS Code', 'Android Studio'],
 };
 

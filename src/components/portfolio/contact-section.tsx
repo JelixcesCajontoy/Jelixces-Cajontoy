@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useActionState } from "react";
@@ -57,7 +58,7 @@ export function ContactSection() {
         <p className="text-muted-foreground max-w-md">
           Have a project in mind, a question, or just want to say hi? I'd love to hear from you. Fill out the form or connect with me through social media.
         </p>
-        <div className="flex space-x-4 pt-2">
+        <div className="flex space-x-2 pt-2 sm:space-x-4">
           <Button variant="outline" size="icon" asChild>
             <a href="mailto:hello@example.com" aria-label="Email">
               <Mail className="h-5 w-5" />

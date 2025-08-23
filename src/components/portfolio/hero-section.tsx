@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -10,22 +11,22 @@ export function HeroSection() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-6 animate-fade-in-up animation-delay-200">
           <Image
-              src="https://placehold.co/144x144.png"
+              src="https://placehold.co/128x128.png"
               alt="John Doe Headshot"
-              width={144}
-              height={144}
+              width={128}
+              height={128}
               className="rounded-full object-cover shadow-lg"
               data-ai-hint="professional headshot"
           />
           <div className="space-y-3">
-              <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">
+              <h1 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary">
               John Doe
               </h1>
-              <h2 className="text-2xl font-medium text-foreground/80 md:text-3xl">
+              <h2 className="text-xl font-medium text-foreground/80 md:text-2xl">
               Full-Stack Developer
               </h2>
           </div>
-          <p className="max-w-2xl text-lg text-muted-foreground leading-relaxed">
+          <p className="max-w-2xl text-base text-muted-foreground leading-relaxed sm:text-lg">
             {displayDescription}
           </p>
         </div>

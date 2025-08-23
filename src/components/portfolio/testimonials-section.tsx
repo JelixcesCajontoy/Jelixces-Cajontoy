@@ -1,3 +1,4 @@
+
 "use client"
 
 import Image from 'next/image';
@@ -34,7 +35,7 @@ export function TestimonialsSection() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">What Others Say</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline text-primary">What Others Say</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Testimonials from colleagues and clients I've had the pleasure of working with.
             </p>
@@ -45,14 +46,14 @@ export function TestimonialsSection() {
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-4xl mx-auto mt-12"
+          className="w-full max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto mt-12"
         >
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className="md:basis-1/2">
                 <div className="p-1 h-full">
                   <Card className="h-full">
-                    <CardContent className="flex flex-col items-center justify-center p-8 text-center space-y-4 h-full">
+                    <CardContent className="flex flex-col items-center justify-center p-6 sm:p-8 text-center space-y-4 h-full">
                       <Image
                         src={testimonial.image}
                         alt={testimonial.name}
@@ -61,7 +62,7 @@ export function TestimonialsSection() {
                         className="rounded-full"
                         data-ai-hint={testimonial.imageHint}
                       />
-                      <blockquote className="text-lg font-medium leading-relaxed text-muted-foreground">"{testimonial.quote}"</blockquote>
+                      <blockquote className="text-base sm:text-lg font-medium leading-relaxed text-muted-foreground">"{testimonial.quote}"</blockquote>
                       <div className="font-semibold">
                         <p className="text-foreground">{testimonial.name}</p>
                         <p className="text-sm text-muted-foreground">{testimonial.title}</p>
@@ -72,8 +73,8 @@ export function TestimonialsSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="hidden sm:flex" />
+          <CarouselNext className="hidden sm:flex" />
         </Carousel>
       </div>
     </section>

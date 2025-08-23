@@ -6,11 +6,11 @@ import { ExternalLink } from 'lucide-react';
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-featured e-commerce site built with Next.js, Stripe for payments, and a custom CMS. Designed for performance and scalability.',
+    title: 'CvSU Accreditation Online Web',
+    description: 'An online platform for CvSU to manage and streamline the accreditation process, built with Flutter for the cross-platform frontend and Firebase for backend services.',
     image: 'https://placehold.co/600x400.png',
-    imageHint: 'e-commerce website',
-    tags: ['Next.js', 'React', 'Tailwind CSS', 'Stripe'],
+    imageHint: 'accreditation webapp',
+    tags: ['Dart', 'Flutter', 'Firebase'],
     liveUrl: '#',
   },
   {

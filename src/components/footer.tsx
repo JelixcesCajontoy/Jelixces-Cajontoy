@@ -6,7 +6,7 @@ export function Footer() {
       <div className="container mx-auto py-12 px-4 md:px-6 lg:py-24">
         <ContactSection />
         <div className="mt-12 border-t border-secondary-foreground/10 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} PortfolioPro. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} My Portfolio. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

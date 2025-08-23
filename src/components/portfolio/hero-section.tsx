@@ -8,7 +8,7 @@ export function HeroSection() {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center text-center space-y-6 animate-fade-in-up">
+        <div className="flex flex-col items-center text-center space-y-6 animate-fade-in-up animation-delay-200">
           <Image
               src="https://placehold.co/128x128.png"
               alt="John Doe Headshot"

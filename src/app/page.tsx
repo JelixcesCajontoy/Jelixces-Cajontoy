@@ -17,7 +17,7 @@ export default function Home() {
         <Separator />
         <SkillsSection />
         <Separator />
-        <TestimonialsSection />
+        {/* <TestimonialsSection /> */}
       </main>
       <Footer />
     </div>

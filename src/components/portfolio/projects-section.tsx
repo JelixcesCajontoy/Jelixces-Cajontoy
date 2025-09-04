@@ -14,22 +14,22 @@ const projects = [
     tags: ['Dart', 'Flutter', 'Firebase'],
     liveUrl: 'https://cvsubacooraccre.web.app/',
   },
-  {
-    title: 'Project Management Tool',
-    description: 'A collaborative project management application that helps teams organize tasks, track progress, and meet deadlines. Features real-time updates with WebSockets.',
-    image: 'https://placehold.co/600x400.png',
-    imageHint: 'dashboard software',
-    tags: ['React', 'Node.js', 'Express', 'MongoDB'],
-    liveUrl: '#',
-  },
-  {
-    title: 'Personal Blog Engine',
-    description: 'A lightweight and fast personal blog created with Astro and Markdown. Focused on content delivery and SEO optimization.',
-    image: 'https://placehold.co/600x400.png',
-    imageHint: 'blog article',
-    tags: ['Astro', 'Markdown', 'TypeScript'],
-    liveUrl: '#',
-  },
+  // {
+  //   title: 'Project Management Tool',
+  //   description: 'A collaborative project management application that helps teams organize tasks, track progress, and meet deadlines. Features real-time updates with WebSockets.',
+  //   image: 'https://placehold.co/600x400.png',
+  //   imageHint: 'dashboard software',
+  //   tags: ['React', 'Node.js', 'Express', 'MongoDB'],
+  //   liveUrl: '#',
+  // },
+  // {
+  //   title: 'Personal Blog Engine',
+  //   description: 'A lightweight and fast personal blog created with Astro and Markdown. Focused on content delivery and SEO optimization.',
+  //   image: 'https://placehold.co/600x400.png',
+  //   imageHint: 'blog article',
+  //   tags: ['Astro', 'Markdown', 'TypeScript'],
+  //   liveUrl: '#',
+  // },
 ];
 
 export function ProjectsSection() {
@@ -44,9 +44,9 @@ export function ProjectsSection() {
             </p>
           </div>
         </div>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 justify-center">
           {projects.map((project, index) => (
-            <Card key={project.title} className="flex flex-col overflow-hidden bg-secondary border-secondary-foreground/10 transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl">
+            <Card key={project.title} className="flex flex-col overflow-hidden bg-secondary border-secondary-foreground/10 transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl max-w-sm">
               <CardHeader className="p-0">
                 <Image
                   src={project.image}

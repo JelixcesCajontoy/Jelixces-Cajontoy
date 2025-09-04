@@ -3,7 +3,6 @@ import { Footer } from "@/components/footer";
 import { HeroSection } from "@/components/portfolio/hero-section";
 import { ProjectsSection } from "@/components/portfolio/projects-section";
 import { SkillsSection } from "@/components/portfolio/skills-section";
-import { TestimonialsSection } from "@/components/portfolio/testimonials-section";
 import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
@@ -16,8 +15,6 @@ export default function Home() {
         <ProjectsSection />
         <Separator />
         <SkillsSection />
-        <Separator />
-        {/* <TestimonialsSection /> */}
       </main>
       <Footer />
     </div>

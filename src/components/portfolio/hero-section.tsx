@@ -4,6 +4,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import jelixImge from '@/image/jelix.jpg';
 
 export function HeroSection() {
   const displayDescription = "A passionate and creative front-end developer with a knack for building beautiful, functional, and user-centric web applications. With a strong foundation in front-end technologies, I thrive on turning complex problems into elegant user interfaces.";
@@ -13,7 +14,7 @@ export function HeroSection() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-8 animate-fade-in-up">
           <Image
-              src="https://placehold.co/144x144.png"
+              src= {jelixImge}
               alt="Jelixces Cajontoy Headshot"
               width={144}
               height={144}

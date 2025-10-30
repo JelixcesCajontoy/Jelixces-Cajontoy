@@ -27,18 +27,6 @@ export function AboutSection() {
   return (
     <section id="about" className="w-full py-16 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6 grid gap-16 lg:grid-cols-2 items-start">
-        <div className="flex justify-center items-start lg:order-last">
-          <div className="relative p-4 border-2 border-dashed rounded-3xl border-primary/50">
-            <Image
-              src={aboutImage.src}
-              alt="About Me Photo"
-              width={aboutImage.width}
-              height={aboutImage.height}
-              className="rounded-2xl object-cover aspect-[4/5]"
-              data-ai-hint={aboutImage.hint}
-            />
-          </div>
-        </div>
         <div className="space-y-8">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
@@ -67,6 +55,18 @@ export function AboutSection() {
                   );
                 })}
               </div>
+          </div>
+        </div>
+        <div className="flex justify-center items-start">
+          <div className="relative p-4 border-2 border-dashed rounded-3xl border-primary/50">
+            <Image
+              src={aboutImage.src}
+              alt="About Me Photo"
+              width={aboutImage.width}
+              height={aboutImage.height}
+              className="rounded-2xl object-cover aspect-[4/5]"
+              data-ai-hint={aboutImage.hint}
+            />
           </div>
         </div>
       </div>

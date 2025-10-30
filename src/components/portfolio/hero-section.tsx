@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -9,10 +10,10 @@ export function HeroSection() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-8 animate-fade-in-up">
           <div className="space-y-3">
-              <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-foreground">
+              <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-6xl md:text-7xl text-foreground">
               Jelixces Cajontoy
               </h1>
-              <h2 className="text-xl font-medium text-primary md:text-2xl">
+              <h2 className="text-lg font-medium text-primary sm:text-xl md:text-2xl">
               Front-end Developer
               </h2>
               <div className="flex justify-center gap-6 pt-2">

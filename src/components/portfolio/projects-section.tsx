@@ -49,7 +49,7 @@ export function ProjectsSection() {
               </CardHeader>
               <CardContent className="p-6 flex-grow">
                 <CardTitle className="font-headline mb-2 text-xl">{project.title}</CardTitle>
-                <CardDescription className="text-muted-foreground mb-4">{project.description}</CardDescription>
+                <CardDescription className="text-muted-foreground mb-4 text-base">{project.description}</CardDescription>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <Badge key={tag} variant="outline" className="border-primary/50 text-primary">{tag}</Badge>

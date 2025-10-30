@@ -53,7 +53,7 @@ export function AboutSection() {
                     </div>
                 </div>
                 <div className="space-y-4">
-                    <p className="text-lg text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
                     I started coding in 2020, and what began as a hobby quickly became something I love doing every day. I focus on front-end development, mainly using Flutter and web technologies to build clean, responsive, and accessible interfaces. I’ve worked on projects that mix creativity with functionality from AR-based apps and translation tools to full web systems. My background in Computer Science and research helps me approach problems methodically while keeping the user experience front and center. I care about writing maintainable code and crafting designs that feel intuitive and purposeful.
                     </p>
                 </div>

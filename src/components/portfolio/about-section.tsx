@@ -5,7 +5,6 @@ import Image from 'next/image';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Globe, Smartphone, SlidersHorizontal, Gamepad2 } from 'lucide-react';
-import type { ElementType } from 'react';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
 
@@ -38,25 +37,10 @@ export function AboutSection() {
   return (
     <section id="about" ref={ref} className={cn("w-full py-16 md:py-24 lg:py-32 opacity-0", isVisible && "animate-fade-in-up")}>
       <div className="container px-4 md:px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-12 items-stretch">
           <div className="flex flex-col space-y-8">
-            <div className="md:hidden">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary mb-4">
-                About Me
-              </h2>
-              <div className="relative p-4 border-2 border-dashed rounded-3xl border-primary/50">
-                <Image
-                    src={aboutImage.src}
-                    alt="About Me Photo"
-                    width={aboutImage.width}
-                    height={aboutImage.height}
-                    className="rounded-2xl object-cover w-full h-auto"
-                    data-ai-hint={aboutImage.hint}
-                />
-              </div>
-            </div>
             <div className="space-y-4">
-              <h2 className="hidden md:block text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
                 About Me
               </h2>
               <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
@@ -84,15 +68,17 @@ export function AboutSection() {
                 </div>
             </div>
           </div>
-          <div className="hidden md:flex justify-center items-start sticky top-24">
-            <div className="relative p-4 border-2 border-dashed rounded-3xl border-primary/50 w-full h-full">
-              <Image
-                  src={aboutImage.src}
-                  alt="About Me Photo"
-                  fill
-                  className="rounded-2xl object-cover"
-                  data-ai-hint={aboutImage.hint}
-              />
+          <div className="relative hidden md:block">
+            <div className="p-4 border-2 border-dashed rounded-3xl border-primary/50 w-full h-full">
+              <div className="relative w-full h-full min-h-[500px]">
+                <Image
+                    src={aboutImage.src}
+                    alt="About Me Photo"
+                    fill
+                    className="rounded-2xl object-cover"
+                    data-ai-hint={aboutImage.hint}
+                />
+              </div>
             </div>
           </div>
         </div>

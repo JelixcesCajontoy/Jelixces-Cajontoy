@@ -10,7 +10,7 @@ import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
 import placeholderImages from '@/image/bcoordinates.png';
 import placeholderImages2 from '@/image/cvsuaccre.png';
-
+import placeholderImages1 from '@/image/Tournament Tracker.png';
 
 const projects = [
   {
@@ -25,6 +25,13 @@ const projects = [
     description: 'Bacoordinate is your smart travel companion. Plan your trips, connect with fellow travelers through the forum, and explore destinations with personalized guidance-all in one intuitive app.',
     image: placeholderImages,
     tags: ['Flutter', 'Dart', 'Firebase'],
+    liveUrl: '#',
+  },
+  {
+    title: 'Tournament Tracker System',
+    description: 'A web and mobile app that streamlines esports tournament management by letting organizers create events, manage teams, and track real-time schedules, standings, and results with automatically updated brackets.',
+    image: placeholderImages1,
+    tags: ['TypeScript', 'Node.js', 'Tailwind CSS'],
     liveUrl: '#',
   },
 ];

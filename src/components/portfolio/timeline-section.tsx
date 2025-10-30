@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
@@ -49,17 +48,17 @@ export function TimelineSection() {
           
           <div className="space-y-12">
             {timelineEvents.map((event, index) => (
-              <div key={event.year} className="relative flex items-start">
+              <div key={event.year} className="relative">
                 {/* Desktop: Alternating sides */}
-                <div className={cn("hidden md:flex w-1/2", index % 2 === 0 ? "pr-[calc(50%+1.25rem)]" : "pl-[calc(50%+1.25rem)]")}>
-                  <div className={cn(
-                    "w-full px-6 py-4 rounded-lg border bg-secondary/50 shadow-md",
-                     index % 2 === 0 ? 'text-right' : 'text-left'
-                  )}>
-                    <div className="font-bold text-lg text-primary">{event.year}</div>
-                    <h3 className="font-headline text-xl font-semibold mb-1">{event.title}</h3>
-                    <p className="text-muted-foreground text-sm">{event.description}</p>
-                  </div>
+                <div className="hidden md:grid md:grid-cols-2 md:gap-12 items-start">
+                    <div className={cn(
+                        "px-6 py-4 rounded-lg border bg-secondary/50 shadow-md",
+                        index % 2 === 0 ? "text-right" : "text-left order-2"
+                    )}>
+                        <div className="font-bold text-lg text-primary">{event.year}</div>
+                        <h3 className="font-headline text-xl font-semibold mb-1">{event.title}</h3>
+                        <p className="text-muted-foreground text-sm">{event.description}</p>
+                    </div>
                 </div>
 
                 {/* Mobile: All on the right */}

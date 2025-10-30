@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -16,7 +15,7 @@ import { ThemeToggle } from "./theme-toggle";
 
 const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#timeline", label: "My Developer Timeline" },
+  { href: "#timeline", label: "Timeline" },
   { href: "#projects", label: "Projects" },
   { href: "#skills", label: "Skills" },
 ];

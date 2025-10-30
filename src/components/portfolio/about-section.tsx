@@ -23,7 +23,7 @@ const services = [
   {
     icon: SlidersHorizontal,
     title: 'DevOps Basics',
-    description: 'Experience with deploying Flutter web apps using Firebase Hosting and GitHub Pages, managing databases with Firestore, and hosting assets like 3D models on Cloudinary. Comfortable with basic CI/CD and cloud integration workflows.',
+    description: 'Experience with deploying Flutter web apps using Firebase Hosting and GitHub Pages, managing databases with Firestore, and hosting assets like 3D models on Cloudinary. Comfortable with basic CI/CD and integration workflows.',
   },
 ];
 

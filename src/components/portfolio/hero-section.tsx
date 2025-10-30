@@ -5,7 +5,7 @@ import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section id="home" className="w-full py-24 md:py-32 lg:py-40">
+    <section id="home" className="w-full min-h-[calc(100vh-4rem)] flex items-center justify-center py-24 md:py-32 lg:py-40">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-8 animate-fade-in-up">
           <div className="space-y-3">

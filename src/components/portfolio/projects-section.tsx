@@ -8,20 +8,19 @@ import { Badge } from '@/components/ui/badge';
 import { ExternalLink } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
-import placeholderImages from '@/lib/placeholder-images.json';
 
 const projects = [
   {
     title: 'CvSU - Bacoor Online Accreditation',
     description: 'An online platform for CvSU to manage and streamline the accreditation process, built with Flutter for the cross-platform frontend and Firebase for backend services.',
-    imageKey: 'cvsuAccre',
+    image: '/cvsu_accre.png',
     tags: ['Dart', 'Flutter', 'Firebase'],
     liveUrl: 'https://cvsubacooraccre.web.app/',
   },
   {
     title: 'BCOORDINATES',
     description: 'Bacoordinate is your smart travel companion. Plan your trips, connect with fellow travelers through the forum, and explore destinations with personalized guidance-all in one intuitive app.',
-    imageKey: 'bcoordinates',
+    image: '/bcoordinates.png',
     tags: ['Flutter', 'Dart', 'Firebase'],
     liveUrl: '#',
   },
@@ -29,7 +28,6 @@ const projects = [
 
 export function ProjectsSection() {
   const { ref, isVisible } = useScrollAnimation();
-  const { projectImages } = placeholderImages;
 
   return (
     <section id="projects" ref={ref} className={cn("w-full py-16 md:py-24 lg:py-32 opacity-0", isVisible && "animate-fade-in-up")}>
@@ -43,18 +41,16 @@ export function ProjectsSection() {
           </div>
         </div>
         <div className="mx-auto grid max-w-5xl items-start gap-8 justify-center sm:grid-cols-2">
-          {projects.map((project) => {
-            const image = projectImages[project.imageKey as keyof typeof projectImages];
-            return (
+          {projects.map((project) => (
               <Card key={project.title} className="flex flex-col overflow-hidden bg-secondary border-secondary-foreground/10 transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl">
                 <CardHeader className="p-0">
                   <div className="relative aspect-[3/2] w-full">
                     <Image
-                      src={image.src}
+                      src={project.image}
                       alt={project.title}
-                      fill
+                      width={600}
+                      height={400}
                       className="object-cover"
-                      data-ai-hint={image.hint}
                     />
                   </div>
                 </CardHeader>
@@ -80,8 +76,7 @@ export function ProjectsSection() {
                   </div>
                 </CardFooter>
               </Card>
-            )
-          })}
+          ))}
         </div>
       </div>
     </section>

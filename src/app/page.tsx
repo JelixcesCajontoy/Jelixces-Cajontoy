@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/portfolio/hero-section";
 import { AboutSection } from "@/components/portfolio/about-section";
 import { ProjectsSection } from "@/components/portfolio/projects-section";
 import { SkillsSection } from "@/components/portfolio/skills-section";
+import { TimelineSection } from "@/components/portfolio/timeline-section";
 import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
@@ -14,6 +15,8 @@ export default function Home() {
         <HeroSection />
         <Separator />
         <AboutSection />
+        <Separator />
+        <TimelineSection />
         <Separator />
         <ProjectsSection />
         <Separator />

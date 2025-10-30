@@ -1,9 +1,8 @@
 "use client";
 
 import Image from 'next/image';
-import placeholderImages from '@/lib/placeholder-images.json';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Globe, Smartphone, SlidersHorizontal, Gamepad2 } from 'lucide-react';
+import { Globe, Smartphone, SlidersHorizontal } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
 
@@ -11,27 +10,21 @@ const services = [
   {
     icon: Globe,
     title: 'Web Applications',
-    description: 'I create responsive web apps with a focus on clean, accessible interfaces and seamless performance.',
+    description: 'Responsive web apps built with Flutter Web and Firebase. I focus on clean interfaces, accessibility, and seamless performance — from dashboards to online accreditation and project management systems.',
   },
   {
     icon: Smartphone,
     title: 'Mobile Applications',
-    description: 'I build cross-platform mobile apps with smooth performance, offline access, and intuitive user experiences.',
+    description: 'Cross-platform mobile apps made with Flutter, featuring offline storage, modern UI, and smooth performance across Android and iOS devices.',
   },
   {
     icon: SlidersHorizontal,
     title: 'DevOps Basics',
-    description: 'I handle app deployment, manage databases, and set up basic CI/CD workflows for reliable releases.',
-  },
-  {
-    icon: Gamepad2,
-    title: 'Game Development',
-    description: 'I develop 2D and 3D games, turning creative concepts into interactive and engaging experiences.',
+    description: 'Experience deploying Flutter web apps with Firebase Hosting and GitHub Pages, managing Firestore databases, and hosting 3D assets on Cloudinary. Familiar with CI/CD and cloud integration workflows.',
   },
 ];
 
 export function AboutSection() {
-  const { aboutImage } = placeholderImages;
   const { ref, isVisible } = useScrollAnimation();
   return (
     <section id="about" ref={ref} className={cn("w-full py-12 md:py-24 lg:py-28 opacity-0", isVisible && "animate-fade-in-up")}>
@@ -44,11 +37,11 @@ export function AboutSection() {
               </h2>
               <div className="relative aspect-[4/5] w-full max-w-md mx-auto md:hidden">
                 <Image
-                  src={aboutImage.src}
+                  src="/Jelix.png"
                   alt="About Me Photo"
                   fill
                   className="rounded-2xl object-cover"
-                  data-ai-hint={aboutImage.hint}
+                  data-ai-hint="professional portrait"
                 />
               </div>
               <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
@@ -78,11 +71,11 @@ export function AboutSection() {
           <div className="hidden md:flex justify-center items-center">
             <div className="relative aspect-[4/5] w-full max-w-md">
               <Image
-                src={aboutImage.src}
+                src="/Jelix.png"
                 alt="About Me Photo"
                 fill
                 className="rounded-2xl object-cover"
-                data-ai-hint={aboutImage.hint}
+                data-ai-hint="professional portrait"
               />
             </div>
           </div>

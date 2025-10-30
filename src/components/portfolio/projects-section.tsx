@@ -8,20 +8,22 @@ import { Badge } from '@/components/ui/badge';
 import { ExternalLink } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
-import placeholderImages from '@/lib/placeholder-images.json';
+import placeholderImages from '@/image/bcoordinates.png';
+import placeholderImages2 from '@/image/cvsuaccre.png';
+
 
 const projects = [
   {
     title: 'CvSU - Bacoor Online Accreditation',
     description: 'An online platform for CvSU to manage and streamline the accreditation process, built with Flutter for the cross-platform frontend and Firebase for backend services.',
-    image: placeholderImages.projectImages.cvsuAccre,
+    image: placeholderImages2,
     tags: ['Dart', 'Flutter', 'Firebase'],
     liveUrl: 'https://cvsubacooraccre.web.app/',
   },
   {
     title: 'BCOORDINATES',
     description: 'Bacoordinate is your smart travel companion. Plan your trips, connect with fellow travelers through the forum, and explore destinations with personalized guidance-all in one intuitive app.',
-    image: placeholderImages.projectImages.bcoordinates,
+    image: placeholderImages,
     tags: ['Flutter', 'Dart', 'Firebase'],
     liveUrl: '#',
   },
@@ -52,7 +54,7 @@ export function ProjectsSection() {
                       width={project.image.width}
                       height={project.image.height}
                       className="object-cover"
-                      data-ai-hint={project.image.hint}
+                      data-ai-hint={project.image}
                     />
                   </div>
                 </CardHeader>
@@ -71,7 +73,7 @@ export function ProjectsSection() {
                       <Button asChild>
                         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="mr-2" />
-                          Live Demo
+                          Live View
                         </a>
                       </Button>
                     }

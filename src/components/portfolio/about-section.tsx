@@ -34,14 +34,23 @@ export function AboutSection() {
   const { aboutImage } = placeholderImages;
   const { ref, isVisible } = useScrollAnimation();
   return (
-    <section id="about" ref={ref} className={cn("w-full py-16 md:py-24 lg:py-28 opacity-0", isVisible && "animate-fade-in-up")}>
+    <section id="about" ref={ref} className={cn("w-full py-12 md:py-24 lg:py-28 opacity-0", isVisible && "animate-fade-in-up")}>
       <div className="container px-4 md:px-6">
-        <div className="grid gap-12 lg:gap-16 md:grid-cols-2 items-start">
-          <div className="space-y-8">
+        <div className="grid gap-10 md:grid-cols-2 md:gap-16">
+          <div className="flex flex-col gap-8">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
                 About Me
               </h2>
+              <div className="relative aspect-[4/5] w-full max-w-md mx-auto md:hidden">
+                <Image
+                  src={aboutImage.src}
+                  alt="About Me Photo"
+                  fill
+                  className="rounded-2xl object-cover"
+                  data-ai-hint={aboutImage.hint}
+                />
+              </div>
               <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
                 I started coding in 2020, turning a hobby into a daily practice. I build reliable, accessible apps and have experience in both solo and team projects. During a full-stack developer job, I worked on different technologies, web architecture, databases, secure authentication, and automated releases. With a Computer science degree, I focus on clean, maintainable code backed by strong fundamentals and teamwork.
               </p>
@@ -66,7 +75,7 @@ export function AboutSection() {
               </div>
             </div>
           </div>
-          <div className="flex justify-center items-start">
+          <div className="hidden md:flex justify-center items-center">
             <div className="relative aspect-[4/5] w-full max-w-md">
               <Image
                 src={aboutImage.src}

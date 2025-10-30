@@ -41,7 +41,7 @@ export function ProjectsSection() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-sm gap-8 sm:max-w-none sm:grid-cols-2">
+        <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2">
           {projects.map((project, index) => (
             <Card key={project.title} className="flex flex-col overflow-hidden bg-secondary border-secondary-foreground/10 transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl">
               <CardHeader className="p-0">
@@ -82,4 +82,3 @@ export function ProjectsSection() {
     </section>
   );
 }
-

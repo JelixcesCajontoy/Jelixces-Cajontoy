@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Globe, Smartphone, SlidersHorizontal, Gamepad2 } from 'lucide-react';
+import { Globe, Smartphone, SlidersHorizontal } from 'lucide-react';
 import type { ElementType } from 'react';
 
 const services = [
@@ -20,11 +20,6 @@ const services = [
     title: 'DevOps Basics',
     description: 'Automated builds and releases (CI/CD), Docker containers, and cloud hosting with basic monitoring.',
   },
-  {
-    icon: Gamepad2,
-    title: 'Game Development',
-    description: 'Small 2D games in Unity with simple controls, basic AI, and optimized UI/performance.'
-  }
 ];
 
 export function AboutSection() {

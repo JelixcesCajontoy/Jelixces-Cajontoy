@@ -42,38 +42,42 @@ export function TimelineSection() {
             </p>
           </div>
         </div>
-        <div className="relative max-w-3xl mx-auto">
+        <div className="relative max-w-5xl mx-auto">
           {/* Vertical line */}
-          <div className="absolute left-6 md:left-1/2 top-0 h-full w-0.5 bg-border -translate-x-1/2"></div>
+          <div className="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-border -translate-x-1/2" aria-hidden="true"></div>
           
           <div className="space-y-12">
             {timelineEvents.map((event, index) => (
-              <div key={event.year} className="relative">
-                {/* Timeline Item */}
-                <div className={cn(
-                  "flex items-start",
-                  "md:grid md:grid-cols-2 md:gap-12",
-                  index % 2 !== 0 && "md:direction-rtl" // This will not work as intended for layout.
-                )}>
-                    {/* Content */}
-                    <div className={cn(
-                        "flex-1 pl-12 md:pl-0",
-                        index % 2 === 0 ? "md:text-right" : "md:text-left"
-                    )}>
-                        <div className={cn(
-                          "px-6 py-4 rounded-lg border bg-secondary/50 shadow-md",
-                          index % 2 === 0 ? "md:mr-12" : "md:ml-12"
-                        )}>
-                            <div className="font-bold text-lg text-primary">{event.year}</div>
-                            <h3 className="font-headline text-xl font-semibold mb-1">{event.title}</h3>
-                            <p className="text-muted-foreground text-sm">{event.description}</p>
-                        </div>
+              <div key={index} className="relative">
+                <div className="absolute top-1 left-4 md:left-1/2 -translate-x-1/2">
+                    <div className="z-10 flex items-center bg-primary rounded-full shadow-lg">
+                      <Briefcase className="h-8 w-8 p-1.5 text-primary-foreground" />
                     </div>
                 </div>
-                
-                {/* Icon */}
-                <div className="absolute left-6 md:left-1/2 top-2 z-10 flex items-center bg-primary rounded-full shadow-lg -translate-x-1/2">
-                  <Briefcase className="h-10 w-10 p-2 text-primary-foreground" />
+
+                <div className={cn(
+                  "flex flex-row-reverse md:grid md:grid-cols-2 md:gap-8 items-center",
+                  index % 2 !== 0 && "md:flex-row-reverse"
+                )}>
+                  
+                  <div className={cn(
+                    "w-full px-4 py-2 md:p-0",
+                    index % 2 !== 0 ? "md:text-left" : "md:text-right"
+                  )}>
+                    <div className="md:hidden"></div> {/* Spacer for mobile */}
+                  </div>
+                  
+                  <div className={cn(
+                    "flex-1 pl-12 md:pl-0",
+                    index % 2 === 0 ? "md:text-right md:pr-8" : "md:text-left md:pl-8"
+                  )}>
+                    <div className="px-6 py-4 rounded-lg border bg-secondary/50 shadow-md">
+                        <div className="font-bold text-lg text-primary">{event.year}</div>
+                        <h3 className="font-headline text-xl font-semibold mb-1">{event.title}</h3>
+                        <p className="text-muted-foreground text-sm">{event.description}</p>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             ))}

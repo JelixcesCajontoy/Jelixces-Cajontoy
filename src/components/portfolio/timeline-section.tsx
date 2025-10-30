@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
@@ -43,29 +44,40 @@ export function TimelineSection() {
           </div>
         </div>
         <div className="relative max-w-3xl mx-auto">
-          <div className="absolute left-1/2 top-0 h-full w-0.5 bg-border -translate-x-1/2"></div>
-          {timelineEvents.map((event, index) => (
-            <div
-              key={event.year}
-              className={`mb-12 flex items-center w-full ${
-                index % 2 === 0 ? 'flex-row-reverse' : ''
-              }`}
-            >
-              <div className="w-1/2"></div>
-              <div className="z-10 flex items-center bg-primary rounded-full shadow-lg">
-                <Briefcase className="h-10 w-10 p-2 text-primary-foreground" />
+          {/* Vertical line */}
+          <div className="absolute left-6 md:left-1/2 top-0 h-full w-0.5 bg-border -translate-x-1/2"></div>
+          
+          <div className="space-y-12">
+            {timelineEvents.map((event, index) => (
+              <div key={event.year} className="relative flex items-start">
+                {/* Desktop: Alternating sides */}
+                <div className={cn("hidden md:flex w-1/2", index % 2 === 0 ? "pr-[calc(50%+1.25rem)]" : "pl-[calc(50%+1.25rem)]")}>
+                  <div className={cn(
+                    "w-full px-6 py-4 rounded-lg border bg-secondary/50 shadow-md",
+                     index % 2 === 0 ? 'text-right' : 'text-left'
+                  )}>
+                    <div className="font-bold text-lg text-primary">{event.year}</div>
+                    <h3 className="font-headline text-xl font-semibold mb-1">{event.title}</h3>
+                    <p className="text-muted-foreground text-sm">{event.description}</p>
+                  </div>
+                </div>
+
+                {/* Mobile: All on the right */}
+                <div className="md:hidden flex-1 pl-12">
+                  <div className="px-6 py-4 rounded-lg border bg-secondary/50 shadow-md text-left">
+                     <div className="font-bold text-lg text-primary">{event.year}</div>
+                    <h3 className="font-headline text-xl font-semibold mb-1">{event.title}</h3>
+                    <p className="text-muted-foreground text-sm">{event.description}</p>
+                  </div>
+                </div>
+                
+                {/* Icon */}
+                <div className="absolute left-6 md:left-1/2 top-2 z-10 flex items-center bg-primary rounded-full shadow-lg -translate-x-1/2">
+                  <Briefcase className="h-10 w-10 p-2 text-primary-foreground" />
+                </div>
               </div>
-              <div
-                className={`w-1/2 px-6 py-4 rounded-lg border bg-secondary/50 shadow-md ${
-                  index % 2 === 0 ? 'text-right' : 'text-left'
-                }`}
-              >
-                <div className="font-bold text-lg text-primary">{event.year}</div>
-                <h3 className="font-headline text-xl font-semibold mb-1">{event.title}</h3>
-                <p className="text-muted-foreground text-sm">{event.description}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -5,12 +5,14 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Globe, Smartphone, SlidersHorizontal } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
+import myimage from '@/image/Jelix.png';
+
 
 const services = [
   {
     icon: Globe,
     title: 'Web Applications',
-    description: 'Responsive web apps built with Flutter Web and Firebase. I focus on clean interfaces, accessibility, and seamless performance — from dashboards to online accreditation and project management systems.',
+    description: 'Responsive web apps built with Flutter Web and Firebase. I focus on clean interfaces, accessibility, and seamless performance from dashboards to online accreditation and project management systems.',
   },
   {
     icon: Smartphone,
@@ -37,7 +39,7 @@ export function AboutSection() {
               </h2>
               <div className="relative aspect-[4/5] w-full max-w-md mx-auto md:hidden">
                 <Image
-                  src="/Jelix.png"
+                  src={myimage}
                   alt="About Me Photo"
                   fill
                   className="rounded-2xl object-cover"
@@ -71,7 +73,7 @@ export function AboutSection() {
           <div className="hidden md:flex justify-center items-center">
             <div className="relative aspect-[4/5] w-full max-w-md">
               <Image
-                src="/Jelix.png"
+                src={myimage}
                 alt="About Me Photo"
                 fill
                 className="rounded-2xl object-cover"

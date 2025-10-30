@@ -43,10 +43,25 @@ export function AboutSection() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
                 About Me
               </h2>
-              <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
-              I started coding in 2020, turning a hobby into a daily practice. I build reliable, accessible apps and have experience in both solo and team projects. During a full-stack developer job, I worked on different technologies, web architecture, databases, secure authentication, and automated releases. With a Computer science degree, I focus on clean, maintainable code backed by strong fundamentals and teamwork.
-              </p>
             </div>
+            
+            <div className="relative md:hidden">
+              <div className="p-4 border-2 border-dashed rounded-3xl border-primary/50 w-full h-full">
+                <div className="relative w-full h-full min-h-[400px]">
+                  <Image
+                      src={aboutImage.src}
+                      alt="About Me Photo"
+                      fill
+                      className="rounded-2xl object-cover"
+                      data-ai-hint={aboutImage.hint}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
+              I started coding in 2020, turning a hobby into a daily practice. I build reliable, accessible apps and have experience in both solo and team projects. During a full-stack developer job, I worked on different technologies, web architecture, databases, secure authentication, and automated releases. With a Computer science degree, I focus on clean, maintainable code backed by strong fundamentals and teamwork.
+            </p>
 
             <div className="space-y-6 w-full">
                 <h3 className="text-2xl font-bold tracking-tighter sm:text-3xl font-headline">What I can do</h3>
@@ -70,7 +85,7 @@ export function AboutSection() {
           </div>
           <div className="relative hidden md:block">
             <div className="p-4 border-2 border-dashed rounded-3xl border-primary/50 w-full h-full">
-              <div className="relative w-full h-full min-h-[500px]">
+              <div className="relative w-full h-full">
                 <Image
                     src={aboutImage.src}
                     alt="About Me Photo"

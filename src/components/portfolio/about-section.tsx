@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from 'next/image';
@@ -37,10 +36,10 @@ export function AboutSection() {
   return (
     <section id="about" ref={ref} className={cn("w-full py-16 md:py-24 lg:py-28 opacity-0", isVisible && "animate-fade-in-up")}>
       <div className="container px-4 md:px-6">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid gap-12 lg:gap-16 md:grid-cols-2 items-start">
           <div className="space-y-8">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary mb-4">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
                 About Me
               </h2>
               <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
@@ -67,18 +66,15 @@ export function AboutSection() {
               </div>
             </div>
           </div>
-
-          <div className="flex items-start justify-center">
-            <div className="p-4 border-2 border-dashed rounded-3xl border-primary/50 w-full sticky top-24">
-              <div className="relative w-full aspect-[4/5]">
-                <Image
-                  src={aboutImage.src}
-                  alt="About Me Photo"
-                  fill
-                  className="rounded-2xl object-cover"
-                  data-ai-hint={aboutImage.hint}
-                />
-              </div>
+          <div className="flex justify-center items-start">
+            <div className="relative aspect-[4/5] w-full max-w-md">
+              <Image
+                src={aboutImage.src}
+                alt="About Me Photo"
+                fill
+                className="rounded-2xl object-cover"
+                data-ai-hint={aboutImage.hint}
+              />
             </div>
           </div>
         </div>

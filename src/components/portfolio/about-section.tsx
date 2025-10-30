@@ -39,13 +39,30 @@ export function AboutSection() {
     <section id="about" ref={ref} className={cn("w-full py-16 md:py-24 lg:py-32 opacity-0", isVisible && "animate-fade-in-up")}>
       <div className="container px-4 md:px-6">
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div className="space-y-8">
-            <div className="space-y-4">
+          <div className="flex flex-col space-y-8">
+            <div className="space-y-4 md:hidden">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
                 About Me
               </h2>
+            </div>
+             <div className="flex justify-center items-start md:hidden">
+              <div className="relative p-4 border-2 border-dashed rounded-3xl border-primary/50">
+                <Image
+                    src={aboutImage.src}
+                    alt="About Me Photo"
+                    width={aboutImage.width}
+                    height={aboutImage.height}
+                    className="rounded-2xl object-cover w-full"
+                    data-ai-hint={aboutImage.hint}
+                />
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h2 className="hidden md:block text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
+                About Me
+              </h2>
               <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
-              I started coding in 2021, turning a hobby into a daily practice. I build reliable, accessible apps and have experience in both solo and team projects. During a full-stack developer job, I worked on different technologies, web architecture, databases, secure authentication, and automated releases. With a Computer science degree, I focus on clean, maintainable code backed by strong fundamentals and teamwork.
+              I started coding in 2020, turning a hobby into a daily practice. I build reliable, accessible apps and have experience in both solo and team projects. During a full-stack developer job, I worked on different technologies, web architecture, databases, secure authentication, and automated releases. With a Computer science degree, I focus on clean, maintainable code backed by strong fundamentals and teamwork.
               </p>
             </div>
 
@@ -69,7 +86,7 @@ export function AboutSection() {
                 </div>
             </div>
           </div>
-          <div className="flex justify-center items-start">
+          <div className="hidden md:flex justify-center items-start">
             <div className="relative p-4 border-2 border-dashed rounded-3xl border-primary/50 sticky top-24">
               <Image
                   src={aboutImage.src}

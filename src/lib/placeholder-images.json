@@ -1,0 +1,8 @@
+{
+  "aboutImage": {
+    "src": "https://picsum.photos/seed/aboutme/450/450",
+    "width": 450,
+    "height": 450,
+    "hint": "professional portrait"
+  }
+}

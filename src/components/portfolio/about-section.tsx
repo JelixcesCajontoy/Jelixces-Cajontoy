@@ -13,7 +13,7 @@ const services = [
   {
     icon: Globe,
     title: 'Web Applications',
-    description: 'Interactive and responsive web apps built with Flutter Web and Firebase. I focus on clean UI, accessibility, and seamless performance — from dashboards to online systems like accreditation and project management platforms.',
+    description: 'Interactive and responsive web apps built with Flutter Web and Firebase. I focus on clean UI, accessibility, and seamless performance from dashboards to online systems like accreditation and project management platforms.',
   },
   {
     icon: Smartphone,

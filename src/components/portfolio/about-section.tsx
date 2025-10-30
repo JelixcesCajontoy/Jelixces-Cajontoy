@@ -33,7 +33,7 @@ export function AboutSection() {
   return (
     <section id="about" ref={ref} className={cn("w-full py-16 md:py-24 lg:py-32 opacity-0", isVisible && "animate-fade-in-up")}>
       <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center text-center space-y-8">
+          <div className="flex flex-col items-start text-left space-y-8">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
               About Me
             </h2>

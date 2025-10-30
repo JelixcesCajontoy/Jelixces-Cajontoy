@@ -25,11 +25,6 @@ const timelineEvents = [
     title: 'Mobile with Flutter',
     description: 'Expanded my skillset into mobile development with Flutter, creating cross-platform applications for both Android and iOS from a single codebase.',
   },
-  {
-    year: '2024',
-    title: 'Full-Stack with Next.js',
-    description: 'Currently focusing on full-stack development using Next.js, building server-rendered React applications and exploring modern web architecture.',
-  },
 ];
 
 export function TimelineSection() {

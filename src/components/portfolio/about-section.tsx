@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from 'next/image';
@@ -37,7 +36,7 @@ export function AboutSection() {
   return (
     <section id="about" ref={ref} className={cn("w-full py-16 md:py-24 lg:py-32 opacity-0", isVisible && "animate-fade-in-up")}>
       <div className="container px-4 md:px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-stretch">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="flex flex-col space-y-8">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
@@ -83,7 +82,7 @@ export function AboutSection() {
                 </div>
             </div>
           </div>
-          <div className="relative hidden md:block">
+          <div className="relative hidden md:block h-full">
             <div className="p-4 border-2 border-dashed rounded-3xl border-primary/50 w-full h-full">
               <div className="relative w-full h-full">
                 <Image

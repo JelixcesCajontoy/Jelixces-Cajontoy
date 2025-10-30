@@ -33,35 +33,30 @@ export function AboutSection() {
   return (
     <section id="about" ref={ref} className={cn("w-full py-16 md:py-24 lg:py-32 opacity-0", isVisible && "animate-fade-in-up")}>
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-start text-left space-y-8 mb-8">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
-              About Me
-            </h2>
-        </div>
-        
-        <div className="flex justify-center items-center mb-8">
-            <div className="relative p-4 border-2 border-dashed rounded-3xl border-primary/50">
-            <Image
-                src={aboutImage.src}
-                alt="About Me Photo"
-                width={aboutImage.width}
-                height={aboutImage.height}
-                className="rounded-2xl object-cover max-w-sm w-full"
-                data-ai-hint={aboutImage.hint}
-            />
-            </div>
-        </div>
-
-        <div className="space-y-8 flex flex-col items-start text-left">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="space-y-8">
             <div className="space-y-4">
-                <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
-                I started coding in 2020, and what began as a hobby quickly became something I love doing every day. I focus on front-end development, mainly using Flutter and web technologies to build clean, responsive, and accessible interfaces. I’ve worked on projects that mix creativity with functionality from AR-based apps and translation tools to full web systems. My background in Computer Science and research helps me approach problems methodically while keeping the user experience front and center. I care about writing maintainable code and crafting designs that feel intuitive and purposeful.
-                </p>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
+                About Me
+              </h2>
+              <div className="relative p-4 border-2 border-dashed rounded-3xl border-primary/50 md:hidden">
+                <Image
+                    src={aboutImage.src}
+                    alt="About Me Photo"
+                    width={aboutImage.width}
+                    height={aboutImage.height}
+                    className="rounded-2xl object-cover w-full"
+                    data-ai-hint={aboutImage.hint}
+                />
+              </div>
+              <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
+              I started coding in 2020, and what began as a hobby quickly became something I love doing every day. I focus on front-end development, mainly using Flutter and web technologies to build clean, responsive, and accessible interfaces. I’ve worked on projects that mix creativity with functionality from AR-based apps and translation tools to full web systems. My background in Computer Science and research helps me approach problems methodically while keeping the user experience front and center. I care about writing maintainable code and crafting designs that feel intuitive and purposeful.
+              </p>
             </div>
 
             <div className="space-y-6 w-full">
                 <h3 className="text-2xl font-bold tracking-tighter sm:text-3xl font-headline">What I can do</h3>
-                <div className="grid gap-6 sm:grid-cols-2">
+                <div className="grid gap-6 sm:grid-cols-1">
                     {services.map((service) => {
                     const Icon = service.icon;
                     return (
@@ -78,6 +73,19 @@ export function AboutSection() {
                     })}
                 </div>
             </div>
+          </div>
+          <div className="hidden md:flex justify-center items-start">
+            <div className="relative p-4 border-2 border-dashed rounded-3xl border-primary/50 sticky top-24">
+              <Image
+                  src={aboutImage.src}
+                  alt="About Me Photo"
+                  width={aboutImage.width}
+                  height={aboutImage.height}
+                  className="rounded-2xl object-cover max-w-sm w-full"
+                  data-ai-hint={aboutImage.hint}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

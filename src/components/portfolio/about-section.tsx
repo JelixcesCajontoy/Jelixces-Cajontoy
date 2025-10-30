@@ -37,13 +37,12 @@ export function AboutSection() {
     <section id="about" ref={ref} className={cn("w-full py-12 md:py-16 lg:py-20 opacity-0", isVisible && "animate-fade-in-up")}>
       <div className="container px-4 md:px-6">
         <div className="grid gap-10 md:grid-cols-2 lg:gap-16">
-          
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
                 About Me
               </h2>
-              {/* Image for mobile view */}
+
               <div className="relative md:hidden">
                 <div className="p-4 border-2 border-dashed rounded-3xl border-primary/50 w-full">
                   <div className="relative w-full aspect-[4/5] min-h-[400px]">
@@ -57,6 +56,7 @@ export function AboutSection() {
                   </div>
                 </div>
               </div>
+              
               <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
                 I started coding in 2020, turning a hobby into a daily practice. I build reliable, accessible apps and have experience in both solo and team projects. During a full-stack developer job, I worked on different technologies, web architecture, databases, secure authentication, and automated releases. With a Computer science degree, I focus on clean, maintainable code backed by strong fundamentals and teamwork.
               </p>
@@ -83,7 +83,6 @@ export function AboutSection() {
             </div>
           </div>
           
-          {/* Image for desktop view */}
           <div className="relative hidden md:flex md:items-start">
             <div className="p-4 border-2 border-dashed rounded-3xl border-primary/50 w-full sticky top-24">
               <div className="relative w-full aspect-[4/5]">
@@ -97,7 +96,6 @@ export function AboutSection() {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

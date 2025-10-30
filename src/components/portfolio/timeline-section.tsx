@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
@@ -42,45 +43,55 @@ export function TimelineSection() {
             </p>
           </div>
         </div>
+
         <div className="relative max-w-5xl mx-auto">
           {/* Vertical line */}
-          <div className="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-border -translate-x-1/2" aria-hidden="true"></div>
+          <div className="absolute left-4 top-0 h-full w-0.5 bg-border -translate-x-1/2 md:left-1/2" aria-hidden="true"></div>
           
           <div className="space-y-12">
-            {timelineEvents.map((event, index) => (
-              <div key={index} className="relative">
-                <div className="absolute top-1 left-4 md:left-1/2 -translate-x-1/2">
+            {timelineEvents.map((event, index) => {
+              const isOdd = index % 2 !== 0;
+              return (
+                <div key={index} className="relative">
+                  {/* Icon in the middle */}
+                  <div className="absolute top-1 left-4 md:left-1/2 -translate-x-1/2">
                     <div className="z-10 flex items-center bg-primary rounded-full shadow-lg">
                       <Briefcase className="h-8 w-8 p-1.5 text-primary-foreground" />
                     </div>
-                </div>
-
-                <div className={cn(
-                  "flex flex-row-reverse md:grid md:grid-cols-2 md:gap-8 items-center",
-                  index % 2 !== 0 && "md:flex-row-reverse"
-                )}>
-                  
-                  <div className={cn(
-                    "w-full px-4 py-2 md:p-0",
-                    index % 2 !== 0 ? "md:text-left" : "md:text-right"
-                  )}>
-                    <div className="md:hidden"></div> {/* Spacer for mobile */}
-                  </div>
-                  
-                  <div className={cn(
-                    "flex-1 pl-12 md:pl-0",
-                    index % 2 === 0 ? "md:text-right md:pr-8" : "md:text-left md:pl-8"
-                  )}>
-                    <div className="px-6 py-4 rounded-lg border bg-secondary/50 shadow-md">
-                        <div className="font-bold text-lg text-primary">{event.year}</div>
-                        <h3 className="font-headline text-xl font-semibold mb-1">{event.title}</h3>
-                        <p className="text-muted-foreground text-sm">{event.description}</p>
-                    </div>
                   </div>
 
+                  {/* Content Card */}
+                  <div className={cn(
+                    "md:grid md:grid-cols-2 md:gap-8 items-center",
+                  )}>
+                    {/* Left or Right Side Logic */}
+                    {isOdd ? (
+                      <>
+                        <div></div> {/* Empty div for spacing on the left */}
+                        <div className="pl-12 md:pl-0">
+                          <div className="px-6 py-4 rounded-lg border bg-secondary/50 shadow-md">
+                            <div className="font-bold text-lg text-primary">{event.year}</div>
+                            <h3 className="font-headline text-xl font-semibold mb-1">{event.title}</h3>
+                            <p className="text-muted-foreground text-sm">{event.description}</p>
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="pl-12 md:pl-0 md:text-right">
+                           <div className="px-6 py-4 rounded-lg border bg-secondary/50 shadow-md">
+                              <div className="font-bold text-lg text-primary">{event.year}</div>
+                              <h3 className="font-headline text-xl font-semibold mb-1">{event.title}</h3>
+                              <p className="text-muted-foreground text-sm">{event.description}</p>
+                           </div>
+                        </div>
+                         <div></div> {/* Empty div for spacing on the right */}
+                      </>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

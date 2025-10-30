@@ -13,23 +13,23 @@ const services = [
   {
     icon: Globe,
     title: 'Web Applications',
-    description: 'Web apps in different architectures: static, single-page, server-rendered, multi-page, or hybrid built for speed, accessibility, and SEO.',
+    description: 'Interactive and responsive web apps built with Flutter Web and Firebase. I focus on clean UI, accessibility, and seamless performance from dashboards to online systems like accreditation and project management platforms.',
   },
   {
     icon: Smartphone,
     title: 'Mobile Applications',
-    description: 'Smooth mobile apps with offline storage, native UI, and safe updates using React Native/Expo.',
+    description: 'Cross-platform mobile apps built with Flutter, featuring smooth performance, offline access, and modern UI. I enjoy crafting intuitive user experiences that work reliably across Android and iOS.',
   },
   {
     icon: SlidersHorizontal,
     title: 'DevOps Basics',
-    description: 'Automated builds and releases (CI/CD), Docker containers, and cloud hosting with basic monitoring.',
+    description: 'Experience with deploying Flutter web apps using Firebase Hosting and GitHub Pages, managing databases with Firestore, and hosting assets like 3D models on Cloudinary. Comfortable with basic CI/CD and cloud integration workflows.',
   },
   {
     icon: Gamepad2,
     title: 'Game Development',
-    description: 'Small 2D games in Unity with simple controls, basic AI, and optimized UI/performance.',
-  },
+    description: 'Basic experience in creating simple games using Godot Engine and C#. I enjoy exploring game mechanics and crafting engaging interactive experiences.',
+  }
 ];
 
 export function AboutSection() {
@@ -40,19 +40,17 @@ export function AboutSection() {
       <div className="container px-4 md:px-6">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="flex flex-col space-y-8">
-            <div className="space-y-4 md:hidden">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
+            <div className="md:hidden">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary mb-4">
                 About Me
               </h2>
-            </div>
-             <div className="flex justify-center items-start md:hidden">
               <div className="relative p-4 border-2 border-dashed rounded-3xl border-primary/50">
                 <Image
                     src={aboutImage.src}
                     alt="About Me Photo"
                     width={aboutImage.width}
                     height={aboutImage.height}
-                    className="rounded-2xl object-cover w-full"
+                    className="rounded-2xl object-cover w-full h-auto"
                     data-ai-hint={aboutImage.hint}
                 />
               </div>
@@ -86,14 +84,13 @@ export function AboutSection() {
                 </div>
             </div>
           </div>
-          <div className="hidden md:flex justify-center items-start">
-            <div className="relative p-4 border-2 border-dashed rounded-3xl border-primary/50 sticky top-24">
+          <div className="hidden md:flex justify-center items-start sticky top-24">
+            <div className="relative p-4 border-2 border-dashed rounded-3xl border-primary/50 w-full h-full">
               <Image
                   src={aboutImage.src}
                   alt="About Me Photo"
-                  width={aboutImage.width}
-                  height={aboutImage.height}
-                  className="rounded-2xl object-cover w-full"
+                  fill
+                  className="rounded-2xl object-cover"
                   data-ai-hint={aboutImage.hint}
               />
             </div>

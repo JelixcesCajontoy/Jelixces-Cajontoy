@@ -8,21 +8,20 @@ import { Badge } from '@/components/ui/badge';
 import { ExternalLink } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
+import placeholderImages from '@/lib/placeholder-images.json';
 
 const projects = [
   {
     title: 'CvSU - Bacoor Online Accreditation',
     description: 'An online platform for CvSU to manage and streamline the accreditation process, built with Flutter for the cross-platform frontend and Firebase for backend services.',
-    image: '/cvsuaccre.png',
-    imageHint: 'accreditation webapp',
+    imageKey: 'cvsuAccre',
     tags: ['Dart', 'Flutter', 'Firebase'],
     liveUrl: 'https://cvsubacooraccre.web.app/',
   },
   {
     title: 'BCOORDINATES',
     description: 'Bacoordinate is your smart travel companion. Plan your trips, connect with fellow travelers through the forum, and explore destinations with personalized guidance-all in one intuitive app.',
-    image: '/bcoordinates.png',
-    imageHint: 'travel companion app',
+    imageKey: 'bcoordinates',
     tags: ['Flutter', 'Dart', 'Firebase'],
     liveUrl: '#',
   },
@@ -30,6 +29,8 @@ const projects = [
 
 export function ProjectsSection() {
   const { ref, isVisible } = useScrollAnimation();
+  const { projectImages } = placeholderImages;
+
   return (
     <section id="projects" ref={ref} className={cn("w-full py-16 md:py-24 lg:py-32 opacity-0", isVisible && "animate-fade-in-up")}>
       <div className="container px-4 md:px-6">
@@ -41,42 +42,46 @@ export function ProjectsSection() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2">
-          {projects.map((project, index) => (
-            <Card key={project.title} className="flex flex-col overflow-hidden bg-secondary border-secondary-foreground/10 transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl">
-              <CardHeader className="p-0">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-cover aspect-[3/2]"
-                  data-ai-hint={project.imageHint}
-                />
-              </CardHeader>
-              <CardContent className="p-6 flex-grow">
-                <CardTitle className="font-headline mb-2 text-xl">{project.title}</CardTitle>
-                <CardDescription className="text-muted-foreground mb-4 text-base">{project.description}</CardDescription>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} variant="outline" className="border-primary/50 text-primary">{tag}</Badge>
-                  ))}
-                </div>
-              </CardContent>
-              <CardFooter className="p-6 pt-0">
-                <div className="flex w-full justify-start gap-4">
-                  {project.liveUrl !== '#' &&
-                    <Button asChild>
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2" />
-                        Live Demo
-                      </a>
-                    </Button>
-                  }
-                </div>
-              </CardFooter>
-            </Card>
-          ))}
+        <div className="mx-auto grid max-w-5xl items-start gap-8 justify-center sm:grid-cols-2">
+          {projects.map((project) => {
+            const image = projectImages[project.imageKey as keyof typeof projectImages];
+            return (
+              <Card key={project.title} className="flex flex-col overflow-hidden bg-secondary border-secondary-foreground/10 transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl">
+                <CardHeader className="p-0">
+                  <div className="relative aspect-[3/2] w-full">
+                    <Image
+                      src={image.src}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      data-ai-hint={image.hint}
+                    />
+                  </div>
+                </CardHeader>
+                <CardContent className="p-6 flex-grow">
+                  <CardTitle className="font-headline mb-2 text-xl">{project.title}</CardTitle>
+                  <CardDescription className="text-muted-foreground mb-4 text-base">{project.description}</CardDescription>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <Badge key={tag} variant="outline" className="border-primary/50 text-primary">{tag}</Badge>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter className="p-6 pt-0">
+                  <div className="flex w-full justify-start gap-4">
+                    {project.liveUrl !== '#' &&
+                      <Button asChild>
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="mr-2" />
+                          Live Demo
+                        </a>
+                      </Button>
+                    }
+                  </div>
+                </CardFooter>
+              </Card>
+            )
+          })}
         </div>
       </div>
     </section>

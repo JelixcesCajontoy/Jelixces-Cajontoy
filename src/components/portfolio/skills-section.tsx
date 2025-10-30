@@ -1,26 +1,36 @@
-
 "use client";
 
-import { Badge } from '@/components/ui/badge';
-import { Code, Brush, Rocket } from 'lucide-react';
-import type { ElementType } from 'react';
-import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
+import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
-const skills: Record<string, string[]> = {
-  'Languages': ['JavaScript', 'TypeScript', 'Java', 'Python', 'Dart', 'C#'],
-  'Frontend': ['React.js', 'Vue.js', 'Flutter', 'Blazor', 'HTML5', 'CSS3 / SCSS', 'Tailwind CSS'],
-  'DevOps & Tools': ['Git', 'GitHub', 'Vercel', 'Firebase', 'VS Code', 'Android Studio'],
-};
+const skills = [
+  { name: 'JavaScript', logo: '/logos/javascript.svg' },
+  { name: 'TypeScript', logo: '/logos/typescript.svg' },
+  { name: 'Java', logo: '/logos/java.svg' },
+  { name: 'Python', logo: '/logos/python.svg' },
+  { name: 'Dart', logo: '/logos/dart.svg' },
+  { name: 'C#', logo: '/logos/csharp.svg' },
+  { name: 'React.js', logo: '/logos/react.svg' },
+  { name: 'Vue.js', logo: '/logos/vue.svg' },
+  { name: 'Flutter', logo: '/logos/flutter.svg' },
+  { name: 'HTML5', logo: '/logos/html5.svg' },
+  { name: 'CSS3', logo: '/logos/css3.svg' },
+  { name: 'Tailwind CSS', logo: '/logos/tailwindcss.svg' },
+  { name: 'Git', logo: '/logos/git.svg' },
+  { name: 'GitHub', logo: '/logos/github.svg' },
+  { name: 'Vercel', logo: '/logos/vercel.svg' },
+  { name: 'Firebase', logo: '/logos/firebase.svg' },
+];
 
-const icons: Record<string, ElementType> = {
-  'Languages': Code,
-  'Frontend': Brush,
-  'DevOps & Tools': Rocket,
-};
+const SkillLogo = ({ name, logo }: { name: string; logo: string }) => (
+  <li className="flex-shrink-0 w-24 h-24 flex items-center justify-center mx-4">
+    <img src={logo} alt={name} className="h-12 w-12 object-contain" />
+  </li>
+);
 
 export function SkillsSection() {
   const { ref, isVisible } = useScrollAnimation();
+
   return (
     <section id="skills" ref={ref} className={cn("w-full py-16 md:py-24 lg:py-32 opacity-0", isVisible && "animate-fade-in-up")}>
       <div className="container px-4 md:px-6">
@@ -32,25 +42,14 @@ export function SkillsSection() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2">
-          {Object.entries(skills).map(([category, skillList]) => {
-            const Icon = icons[category] || Code;
-            return (
-              <div key={category} className="grid gap-4 p-6 rounded-lg border bg-secondary/50">
-                <div className="flex items-center gap-4">
-                   <div className="bg-primary/10 text-primary p-3 rounded-full">
-                     <Icon className="h-6 w-6" />
-                   </div>
-                   <h3 className="text-xl font-bold font-headline">{category}</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {skillList.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="text-sm py-1 px-3">{skill}</Badge>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
+        <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+          <div className="flex w-max animate-scroll">
+            <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none">
+              {[...skills, ...skills].map((skill, index) => (
+                <SkillLogo key={`${skill.name}-${index}`} name={skill.name} logo={skill.logo} />
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

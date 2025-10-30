@@ -22,7 +22,7 @@ const projects = [
   },
   {
     title: 'BCOORDINATES',
-    description: 'Bacoordinate is your smart travel companion. Plan your trips, connect with fellow travelers through the forum, and explore destinations with personalized guidance-all in one intuitive app.',
+    description: 'Bacoordinates is an AR-based mobile app that helps tourists explore Bacoor’s landmarks through interactive experiences, offering historical details, trivia, navigation, personalized itineraries, and translation support for visitors.',
     image: placeholderImages,
     tags: ['Flutter', 'Dart', 'Firebase'],
     liveUrl: '#',

@@ -8,19 +8,20 @@ import { Badge } from '@/components/ui/badge';
 import { ExternalLink } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
+import placeholderImages from '@/lib/placeholder-images.json';
 
 const projects = [
   {
     title: 'CvSU - Bacoor Online Accreditation',
     description: 'An online platform for CvSU to manage and streamline the accreditation process, built with Flutter for the cross-platform frontend and Firebase for backend services.',
-    image: '/cvsu_accre.png',
+    image: placeholderImages.projectImages.cvsuAccre,
     tags: ['Dart', 'Flutter', 'Firebase'],
     liveUrl: 'https://cvsubacooraccre.web.app/',
   },
   {
     title: 'BCOORDINATES',
     description: 'Bacoordinate is your smart travel companion. Plan your trips, connect with fellow travelers through the forum, and explore destinations with personalized guidance-all in one intuitive app.',
-    image: '/bcoordinates.png',
+    image: placeholderImages.projectImages.bcoordinates,
     tags: ['Flutter', 'Dart', 'Firebase'],
     liveUrl: '#',
   },
@@ -46,11 +47,12 @@ export function ProjectsSection() {
                 <CardHeader className="p-0">
                   <div className="relative aspect-[3/2] w-full">
                     <Image
-                      src={project.image}
+                      src={project.image.src}
                       alt={project.title}
-                      width={600}
-                      height={400}
+                      width={project.image.width}
+                      height={project.image.height}
                       className="object-cover"
+                      data-ai-hint={project.image.hint}
                     />
                   </div>
                 </CardHeader>

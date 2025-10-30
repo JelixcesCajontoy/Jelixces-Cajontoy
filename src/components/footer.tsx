@@ -2,44 +2,64 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer id="contact" className="w-full bg-background border-t border-border">
-      <div className="container mx-auto py-12 px-4 md:px-6">
-        <div className="grid gap-8 text-center md:text-left md:grid-cols-2 lg:grid-cols-3">
-          <div className="lg:col-span-1">
-             <h3 className="text-2xl font-bold font-headline text-primary">Get in Touch</h3>
-            <p className="mt-2 text-muted-foreground">
-              I'm actively looking for new opportunities. Feel free to reach out.
-            </p>
-          </div>
-          <div className="flex flex-col items-center md:items-end lg:col-span-2">
-            <div className="flex space-x-6">
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground transition-colors hover:text-primary"
-              >
-                <Github className="h-6 w-6" />
-                <span className="sr-only">GitHub</span>
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground transition-colors hover:text-primary"
-              >
-                <Linkedin className="h-6 w-6" />
-                <span className="sr-only">LinkedIn</span>
-              </a>
-              <a href="mailto:" className="text-foreground transition-colors hover:text-primary">
-                <Mail className="h-6 w-6" />
-                <span className="sr-only">Email</span>
-              </a>
-            </div>
-          </div>
+    <footer className="w-full border-t border-border bg-background py-12">
+      <div className="container mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 text-sm md:grid-cols-4 md:px-6">
+        {/* Column 1: Brand */}
+        <div className="flex flex-col items-start">
+          <h3 className="font-bold text-lg text-foreground">Jelixces Cajontoy</h3>
+          <p className="mt-2 text-muted-foreground">
+            A passionate developer creating modern and responsive web applications.
+          </p>
+          <p className="mt-4 text-xs text-muted-foreground/50">
+            © {new Date().getFullYear()} All Rights Reserved.
+          </p>
         </div>
-        <div className="mt-8 border-t border-border/20 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Jelixces Cajontoy. All Rights Reserved.</p>
+
+        {/* Column 2: Navigation */}
+        <div className="flex flex-col items-start md:items-center">
+          <h4 className="font-semibold text-foreground">Navigate</h4>
+          <ul className="mt-4 space-y-2">
+            <li><a href="#about" className="text-muted-foreground transition-colors hover:text-primary">About</a></li>
+            <li><a href="#timeline" className="text-muted-foreground transition-colors hover:text-primary">Timeline</a></li>
+            <li><a href="#projects" className="text-muted-foreground transition-colors hover:text-primary">Projects</a></li>
+            <li><a href="#skills" className="text-muted-foreground transition-colors hover:text-primary">Skills</a></li>
+          </ul>
+        </div>
+
+        {/* Column 3: Connect */}
+        <div className="flex flex-col items-start md:items-center">
+          <h4 className="font-semibold text-foreground">Connect</h4>
+          <ul className="mt-4 space-y-3">
+            <li className="flex items-center gap-2">
+              <Github size={18} className="text-muted-foreground" />
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary">
+                GitHub
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <Linkedin size={18} className="text-muted-foreground" />
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary">
+                LinkedIn
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail size={18} className="text-muted-foreground" />
+              <a href="mailto:" className="text-muted-foreground transition-colors hover:text-primary">
+                Email Me
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 4: Tech Stack */}
+        <div className="flex flex-col items-start md:items-center">
+          <h4 className="font-semibold text-foreground">Built With</h4>
+          <p className="mt-4 text-muted-foreground">
+            Next.js, TypeScript, Tailwind CSS, and ShadCN UI.
+          </p>
+          <a href="#home" className="mt-4 text-muted-foreground transition-colors hover:text-primary">
+            Back to top ↑
+          </a>
         </div>
       </div>
     </footer>

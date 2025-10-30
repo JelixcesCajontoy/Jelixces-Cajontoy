@@ -17,15 +17,15 @@ export function HeroSection() {
               Front-end Developer
               </h2>
               <div className="flex justify-center gap-6 pt-2">
-                <a href="#" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+                <a href="https://github.com/Chell2003" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
                   <Github className="h-6 w-6" />
                   <span className="sr-only">Github</span>
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+                <a href="https://www.linkedin.com/in/jelixces-cajontoy-3046b4189/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
                   <Linkedin className="h-6 w-6" />
                   <span className="sr-only">Linkedin</span>
                 </a>
-                <a href="mailto:" className="text-foreground hover:text-primary transition-colors">
+                <a href="mailto:jelixces@gmail.com" className="text-foreground hover:text-primary transition-colors">
                   <Mail className="h-6 w-6" />
                   <span className="sr-only">Gmail</span>
                 </a>

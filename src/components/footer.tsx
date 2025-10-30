@@ -32,19 +32,19 @@ export function Footer() {
           <ul className="mt-4 space-y-3">
             <li className="flex items-center gap-2">
               <Github size={18} className="text-muted-foreground" />
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary">
+              <a href="https://github.com/Chell2003" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary">
                 GitHub
               </a>
             </li>
             <li className="flex items-center gap-2">
               <Linkedin size={18} className="text-muted-foreground" />
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary">
+              <a href="https://www.linkedin.com/in/jelixces-cajontoy-3046b4189/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary">
                 LinkedIn
               </a>
             </li>
             <li className="flex items-center gap-2">
               <Mail size={18} className="text-muted-foreground" />
-              <a href="mailto:" className="text-muted-foreground transition-colors hover:text-primary">
+              <a href="mailto:jelixces@gmail.com" className="text-muted-foreground transition-colors hover:text-primary">
                 Email Me
               </a>
             </li>

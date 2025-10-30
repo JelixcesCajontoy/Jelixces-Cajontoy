@@ -47,7 +47,7 @@ export function AboutSection() {
                 />
               </div>
               <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
-                I started coding in 2020, turning a hobby into a daily practice. I build reliable, accessible apps and have experience in both solo and team projects. During a full-stack developer job, I worked on different technologies, web architecture, databases, secure authentication, and automated releases. With a Computer science degree, I focus on clean, maintainable code backed by strong fundamentals and teamwork.
+                I started coding in 2020 and turned it from a hobby into a daily practice. I specialize in front-end development, building reliable and accessible interfaces with modern tools and frameworks. My work focuses on Flutter and web technologies, covering responsive design, interactive UIs, and smooth integration with APIs and cloud services. With a background in Computer Science and research, I aim to turn complex ideas into clear, functional, and visually thoughtful interfaces.
               </p>
             </div>
             <div className="space-y-6">

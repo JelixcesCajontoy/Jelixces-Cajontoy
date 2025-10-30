@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from 'next/image';
@@ -6,7 +5,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink } from 'lucide-react';
-import cvsuImage from '@/image/cvsuaccre.png';
 import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
 
@@ -14,10 +12,18 @@ const projects = [
   {
     title: 'CvSU - Bacoor Online Accreditation',
     description: 'An online platform for CvSU to manage and streamline the accreditation process, built with Flutter for the cross-platform frontend and Firebase for backend services.',
-    image: cvsuImage,
+    image: '/cvsuaccre.png',
     imageHint: 'accreditation webapp',
     tags: ['Dart', 'Flutter', 'Firebase'],
     liveUrl: 'https://cvsubacooraccre.web.app/',
+  },
+  {
+    title: 'BCOORDINATES',
+    description: 'Bacoordinate is your smart travel companion. Plan your trips, connect with fellow travelers through the forum, and explore destinations with personalized guidance-all in one intuitive app.',
+    image: '/bcoordinates.png',
+    imageHint: 'travel companion app',
+    tags: ['Flutter', 'Dart', 'Firebase'],
+    liveUrl: '#',
   },
 ];
 
@@ -34,7 +40,7 @@ export function ProjectsSection() {
             </p>
           </div>
         </div>
-        <div className="grid gap-8 justify-center">
+        <div className="grid gap-8 justify-center sm:grid-cols-2">
           {projects.map((project, index) => (
             <Card key={project.title} className="flex flex-col overflow-hidden bg-secondary border-secondary-foreground/10 transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl max-w-sm">
               <CardHeader className="p-0">
@@ -43,7 +49,7 @@ export function ProjectsSection() {
                   alt={project.title}
                   width={600}
                   height={400}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover aspect-[3/2]"
                   data-ai-hint={project.imageHint}
                 />
               </CardHeader>
@@ -58,12 +64,14 @@ export function ProjectsSection() {
               </CardContent>
               <CardFooter className="p-6 pt-0">
                 <div className="flex w-full justify-start gap-4">
-                  <Button asChild>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2" />
-                      Live Demo
-                    </a>
-                  </Button>
+                  {project.liveUrl !== '#' &&
+                    <Button asChild>
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2" />
+                        Live Demo
+                      </a>
+                    </Button>
+                  }
                 </div>
               </CardFooter>
             </Card>

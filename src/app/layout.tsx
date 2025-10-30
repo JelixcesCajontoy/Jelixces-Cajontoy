@@ -15,7 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'My Portfolio',
+  title: 'Jelixces Cajontoy',
   description: 'A professional portfolio',
 };
 

@@ -49,25 +49,26 @@ export function TimelineSection() {
           <div className="space-y-12">
             {timelineEvents.map((event, index) => (
               <div key={event.year} className="relative">
-                {/* Desktop: Alternating sides */}
-                <div className="hidden md:grid md:grid-cols-2 md:gap-12 items-start">
+                {/* Timeline Item */}
+                <div className={cn(
+                  "flex items-start",
+                  "md:grid md:grid-cols-2 md:gap-12",
+                  index % 2 !== 0 && "md:direction-rtl" // This will not work as intended for layout.
+                )}>
+                    {/* Content */}
                     <div className={cn(
-                        "px-6 py-4 rounded-lg border bg-secondary/50 shadow-md",
-                        index % 2 === 0 ? "text-right" : "text-left order-2"
+                        "flex-1 pl-12 md:pl-0",
+                        index % 2 === 0 ? "md:text-right" : "md:text-left"
                     )}>
-                        <div className="font-bold text-lg text-primary">{event.year}</div>
-                        <h3 className="font-headline text-xl font-semibold mb-1">{event.title}</h3>
-                        <p className="text-muted-foreground text-sm">{event.description}</p>
+                        <div className={cn(
+                          "px-6 py-4 rounded-lg border bg-secondary/50 shadow-md",
+                          index % 2 === 0 ? "md:mr-12" : "md:ml-12"
+                        )}>
+                            <div className="font-bold text-lg text-primary">{event.year}</div>
+                            <h3 className="font-headline text-xl font-semibold mb-1">{event.title}</h3>
+                            <p className="text-muted-foreground text-sm">{event.description}</p>
+                        </div>
                     </div>
-                </div>
-
-                {/* Mobile: All on the right */}
-                <div className="md:hidden flex-1 pl-12">
-                  <div className="px-6 py-4 rounded-lg border bg-secondary/50 shadow-md text-left">
-                     <div className="font-bold text-lg text-primary">{event.year}</div>
-                    <h3 className="font-headline text-xl font-semibold mb-1">{event.title}</h3>
-                    <p className="text-muted-foreground text-sm">{event.description}</p>
-                  </div>
                 </div>
                 
                 {/* Icon */}

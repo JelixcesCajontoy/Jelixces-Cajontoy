@@ -1,9 +1,14 @@
+
+"use client";
+
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink } from 'lucide-react';
 import cvsuImage from '@/image/cvsuaccre.png';
+import { useScrollAnimation } from '@/hooks/use-scroll-animation';
+import { cn } from '@/lib/utils';
 
 const projects = [
   {
@@ -14,27 +19,12 @@ const projects = [
     tags: ['Dart', 'Flutter', 'Firebase'],
     liveUrl: 'https://cvsubacooraccre.web.app/',
   },
-  // {
-  //   title: 'Project Management Tool',
-  //   description: 'A collaborative project management application that helps teams organize tasks, track progress, and meet deadlines. Features real-time updates with WebSockets.',
-  //   image: 'https://placehold.co/600x400.png',
-  //   imageHint: 'dashboard software',
-  //   tags: ['React', 'Node.js', 'Express', 'MongoDB'],
-  //   liveUrl: '#',
-  // },
-  // {
-  //   title: 'Personal Blog Engine',
-  //   description: 'A lightweight and fast personal blog created with Astro and Markdown. Focused on content delivery and SEO optimization.',
-  //   image: 'https://placehold.co/600x400.png',
-  //   imageHint: 'blog article',
-  //   tags: ['Astro', 'Markdown', 'TypeScript'],
-  //   liveUrl: '#',
-  // },
 ];
 
 export function ProjectsSection() {
+  const { ref, isVisible } = useScrollAnimation();
   return (
-    <section id="projects" className="w-full py-16 md:py-24 lg:py-32">
+    <section id="projects" ref={ref} className={cn("w-full py-16 md:py-24 lg:py-32 opacity-0", isVisible && "animate-fade-in-up")}>
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <div className="space-y-2">

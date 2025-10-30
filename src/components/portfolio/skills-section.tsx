@@ -1,7 +1,11 @@
 
+"use client";
+
 import { Badge } from '@/components/ui/badge';
-import { Code, Database, Server, Brush, Rocket, ShieldCheck } from 'lucide-react';
+import { Code, Brush, Rocket } from 'lucide-react';
 import type { ElementType } from 'react';
+import { useScrollAnimation } from '@/hooks/use-scroll-animation';
+import { cn } from '@/lib/utils';
 
 const skills: Record<string, string[]> = {
   'Languages': ['JavaScript', 'TypeScript', 'Java', 'Python', 'Dart', 'C#'],
@@ -16,8 +20,9 @@ const icons: Record<string, ElementType> = {
 };
 
 export function SkillsSection() {
+  const { ref, isVisible } = useScrollAnimation();
   return (
-    <section id="skills" className="w-full py-16 md:py-24 lg:py-32">
+    <section id="skills" ref={ref} className={cn("w-full py-16 md:py-24 lg:py-32 opacity-0", isVisible && "animate-fade-in-up")}>
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <div className="space-y-2">

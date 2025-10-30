@@ -1,8 +1,13 @@
+
+"use client";
+
 import Image from 'next/image';
 import placeholderImages from '@/lib/placeholder-images.json';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Globe, Smartphone, SlidersHorizontal } from 'lucide-react';
 import type { ElementType } from 'react';
+import { useScrollAnimation } from '@/hooks/use-scroll-animation';
+import { cn } from '@/lib/utils';
 
 const services = [
   {
@@ -24,14 +29,17 @@ const services = [
 
 export function AboutSection() {
   const { aboutImage } = placeholderImages;
+  const { ref, isVisible } = useScrollAnimation();
   return (
-    <section id="about" className="w-full py-16 md:py-24 lg:py-32">
+    <section id="about" ref={ref} className={cn("w-full py-16 md:py-24 lg:py-32 opacity-0", isVisible && "animate-fade-in-up")}>
       <div className="container px-4 md:px-6">
-        <div className="grid gap-16 lg:grid-cols-2 items-start">
+          <div className="flex flex-col items-center text-center space-y-8">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
+              About Me
+            </h2>
+          </div>
+        <div className="grid gap-16 lg:grid-cols-2 lg:items-start pt-8">
             <div className="space-y-8 flex flex-col items-center text-center lg:items-start lg:text-left">
-                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
-                  About Me
-                </h2>
                 <div className="flex justify-center items-start lg:hidden">
                     <div className="relative p-4 border-2 border-dashed rounded-3xl border-primary/50">
                         <Image

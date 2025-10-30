@@ -69,7 +69,7 @@ export function AboutSection() {
                 </div>
             </div>
           </div>
-          <div className="hidden md:flex justify-center items-start">
+          <div className="flex justify-center items-start">
             <div className="relative p-4 border-2 border-dashed rounded-3xl border-primary/50 sticky top-24">
               <Image
                   src={aboutImage.src}

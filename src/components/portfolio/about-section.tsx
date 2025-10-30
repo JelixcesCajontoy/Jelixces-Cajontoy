@@ -76,7 +76,7 @@ export function AboutSection() {
                   alt="About Me Photo"
                   width={aboutImage.width}
                   height={aboutImage.height}
-                  className="rounded-2xl object-cover max-w-sm w-full"
+                  className="rounded-2xl object-cover w-full"
                   data-ai-hint={aboutImage.hint}
               />
             </div>

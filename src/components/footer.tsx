@@ -57,6 +57,9 @@ export function Footer() {
           <p className="mt-4 text-muted-foreground">
             Next.js, TypeScript, Tailwind CSS, and ShadCN UI.
           </p>
+          <p className="mt-4 text-muted-foreground">
+            Still in development...
+          </p>
           <a href="#home" className="mt-4 text-muted-foreground transition-colors hover:text-primary">
             Back to top ↑
           </a>
